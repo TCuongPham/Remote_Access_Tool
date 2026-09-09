@@ -106,6 +106,13 @@ namespace RAT
                 return Status::ERR + "Tham so PID khong hop le: " + cmd_args;
             }
         }
+        // 5. Lệnh Download
+        else if (cmd_name == Command::DOWNLOAD_FILE)
+        {
+            // Tự stream file qua socket
+            send_file_stream(sock_fd_, cmd_args);
+            return ""; // Trả về chuỗi rỗng để báo hiệu đã tự gửi xong
+        }
 
         return Status::ERR + "Lenh khong hop le: " + cmd_name;
     }
@@ -148,11 +155,14 @@ namespace RAT
                 std::string response = execute_command(cmd);
 
                 // Gửi phản hồi về Server
-                if (!send_message(sock_fd_, response))
+                if (!response.empty())
                 {
-                    std::cerr << Status::ERR << "Loi khi gui phan hoi ve Server!\n";
-                    close_socket(sock_fd_);
-                    break;
+                    if (!send_message(sock_fd_, response))
+                    {
+                        std::cerr << Status::ERR << "Loi khi gui phan hoi ve Server!\n";
+                        close_socket(sock_fd_);
+                        break;
+                    }
                 }
             }
         }

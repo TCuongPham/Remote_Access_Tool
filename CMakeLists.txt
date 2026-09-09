@@ -45,3 +45,38 @@ target_link_libraries(bin_client PRIVATE
     rat_common
     Threads::Threads
 )
+
+# Cấu hình Google Test
+include(FetchContent)
+FetchContent_Declare(
+    googletest
+    GIT_REPOSITORY https://github.com/google/googletest.git
+    GIT_TAG        v1.14.0
+)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
+# Tạo file thực thi test: rat_unit_tests
+add_executable(rat_unit_tests
+    tests/test_main.cpp
+    tests/test_socket_utils.cpp
+    tests/test_executor.cpp
+    tests/test_file_transfer.cpp 
+    client/executor.cpp
+)
+# Thêm thư mục include cho rat_unit_tests
+target_include_directories(rat_unit_tests PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/common
+    ${CMAKE_CURRENT_SOURCE_DIR}/client
+)
+# Liên kết các thư viện với rat_unit_tests
+target_link_libraries(rat_unit_tests PRIVATE
+    rat_common
+    GTest::gtest
+    Threads::Threads
+)
+
+include(GoogleTest)
+gtest_discover_tests(rat_unit_tests)

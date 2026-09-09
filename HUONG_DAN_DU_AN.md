@@ -347,6 +347,7 @@ RAT/
 * **Kiểm thử dừng tiến trình (`kill_process`):**
   * Kiểm thử với PID không hợp lệ (ví dụ: số âm `-999`): Xác nhận hệ thống trả về thông báo lỗi thay vì gửi tín hiệu sai.
 
+* Chạy test: ctest --output-on-failure
 ---
 
 ### HẠNG MỤC 2: TRUYỀN FILE KÍCH THƯỚC LỚN (CHUNK-BASED STREAMING)

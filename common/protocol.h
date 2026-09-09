@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <string>
+#include <endian.h>
 
 namespace RAT
 {
@@ -28,7 +29,18 @@ namespace RAT
         inline const std::string HELP = "HELP";
         // 6. Thoát: EXIT
         inline const std::string EXIT = "EXIT";
+
+        // 7. Download file: DOWNLOAD_FILE <remote_path> <local_path>
+        inline const std::string DOWNLOAD_FILE = "DOWNLOAD_FILE";
     }
+
+    constexpr size_t FILE_CHUNK_SIZE = 64 * 1024; // Kích thước của mỗi khối dữ liệu(64 KB)
+    // Header bắt tay ban đầu khi gửi file
+    struct FileTransferHeader
+    {
+        uint8_t status_code; // 0: Thành công (sẵn sàng gửi), 1: File không tồn tại, 2: Không có quyền đọc
+        uint64_t file_size;  // Kích thước file thực tế (hỗ trợ file > 4GB)
+    };
 
     // DS trạng thái trả về
     namespace Status
@@ -39,12 +51,13 @@ namespace RAT
     }
 
     inline const std::string HELP_TEXT =
-        "=================== SHELL COMMANDS ===================\n"
-        "  HELP               : Hien thi danh sach cac lenh ho tro\n"
-        "  LIST_DIR <path>    : Xem danh sach file/thu muc tai <path>\n"
-        "  READ_FILE <path>   : Xem noi dung file tai <path>\n"
-        "  LIST_PROC          : Xem danh sach cac tien trinh dang chay\n"
-        "  KILL_PROC <pid>    : Ket thuc tien trinh <pid>\n"
-        "  EXIT               : Thoat\n"
-        "=======================================================\n";
+        "=================================== SHELL COMMANDS ================================\n"
+        "  HELP                               : Hien thi danh sach cac lenh ho tro\n"
+        "  LIST_DIR <path>                    : Xem danh sach file/thu muc tai <path>\n"
+        "  READ_FILE <path>                   : Xem noi dung file tai <path>\n"
+        "  DOWNLOAD_FILE <remote> <local>     : Tai file tu Client ve Server\n"
+        "  LIST_PROC                          : Xem danh sach cac tien trinh dang chay\n"
+        "  KILL_PROC <pid>                    : Ket thuc tien trinh <pid>\n"
+        "  EXIT                               : Thoat\n"
+        "===================================================================================\n";
 }

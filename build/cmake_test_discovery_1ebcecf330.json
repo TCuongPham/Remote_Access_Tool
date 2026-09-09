@@ -1,0 +1,54 @@
+{
+  "tests": 6,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "SocketUtilsTest",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "SendAndReceiveStringMessage",
+          "file": "\/home\/ptc\/projects\/RAT\/tests\/test_socket_utils.cpp",
+          "line": 24
+        },
+        {
+          "name": "SendAndReceiveEmptyMessage",
+          "file": "\/home\/ptc\/projects\/RAT\/tests\/test_socket_utils.cpp",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "name": "ExecutorTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "ListDirectoryNonExistentPath",
+          "file": "\/home\/ptc\/projects\/RAT\/tests\/test_executor.cpp",
+          "line": 12
+        },
+        {
+          "name": "ReadFileContentSuccess",
+          "file": "\/home\/ptc\/projects\/RAT\/tests\/test_executor.cpp",
+          "line": 18
+        },
+        {
+          "name": "KillProcessInvalidPid",
+          "file": "\/home\/ptc\/projects\/RAT\/tests\/test_executor.cpp",
+          "line": 35
+        }
+      ]
+    },
+    {
+      "name": "FileTransferTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "Stream5MBFileMatchesExactly",
+          "file": "\/home\/ptc\/projects\/RAT\/tests\/test_file_transfer.cpp",
+          "line": 43
+        }
+      ]
+    }
+  ]
+}

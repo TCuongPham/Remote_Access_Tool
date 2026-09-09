@@ -1,0 +1,7 @@
+SocketUtilsTest.SendAndReceiveStringMessage 3 0.00393745
+SocketUtilsTest.SendAndReceiveEmptyMessage 3 0.00206171
+ExecutorTest.ListDirectoryNonExistentPath 3 0.00200621
+ExecutorTest.ReadFileContentSuccess 3 0.00182998
+ExecutorTest.KillProcessInvalidPid 3 0.00178647
+FileTransferTest.Stream5MBFileMatchesExactly 2 0.0105586
+---

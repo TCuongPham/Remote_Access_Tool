@@ -1,0 +1,161 @@
+Start testing: Sep 09 11:44 +07
+----------------------------------------------------------
+1/6 Testing: SocketUtilsTest.SendAndReceiveStringMessage
+1/6 Test: SocketUtilsTest.SendAndReceiveStringMessage
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SocketUtilsTest.SendAndReceiveStringMessage" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"SocketUtilsTest.SendAndReceiveStringMessage" start time: Sep 09 11:44 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = SocketUtilsTest.SendAndReceiveStringMessage
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SocketUtilsTest
+[ RUN      ] SocketUtilsTest.SendAndReceiveStringMessage
+[       OK ] SocketUtilsTest.SendAndReceiveStringMessage (0 ms)
+[----------] 1 test from SocketUtilsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SocketUtilsTest.SendAndReceiveStringMessage" end time: Sep 09 11:44 +07
+"SocketUtilsTest.SendAndReceiveStringMessage" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: SocketUtilsTest.SendAndReceiveEmptyMessage
+2/6 Test: SocketUtilsTest.SendAndReceiveEmptyMessage
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SocketUtilsTest.SendAndReceiveEmptyMessage" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"SocketUtilsTest.SendAndReceiveEmptyMessage" start time: Sep 09 11:44 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = SocketUtilsTest.SendAndReceiveEmptyMessage
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SocketUtilsTest
+[ RUN      ] SocketUtilsTest.SendAndReceiveEmptyMessage
+[       OK ] SocketUtilsTest.SendAndReceiveEmptyMessage (0 ms)
+[----------] 1 test from SocketUtilsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SocketUtilsTest.SendAndReceiveEmptyMessage" end time: Sep 09 11:44 +07
+"SocketUtilsTest.SendAndReceiveEmptyMessage" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: ExecutorTest.ListDirectoryNonExistentPath
+3/6 Test: ExecutorTest.ListDirectoryNonExistentPath
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ExecutorTest.ListDirectoryNonExistentPath" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ExecutorTest.ListDirectoryNonExistentPath" start time: Sep 09 11:44 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ExecutorTest.ListDirectoryNonExistentPath
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExecutorTest
+[ RUN      ] ExecutorTest.ListDirectoryNonExistentPath
+[       OK ] ExecutorTest.ListDirectoryNonExistentPath (0 ms)
+[----------] 1 test from ExecutorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ExecutorTest.ListDirectoryNonExistentPath" end time: Sep 09 11:44 +07
+"ExecutorTest.ListDirectoryNonExistentPath" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: ExecutorTest.ReadFileContentSuccess
+4/6 Test: ExecutorTest.ReadFileContentSuccess
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ExecutorTest.ReadFileContentSuccess" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ExecutorTest.ReadFileContentSuccess" start time: Sep 09 11:44 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ExecutorTest.ReadFileContentSuccess
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExecutorTest
+[ RUN      ] ExecutorTest.ReadFileContentSuccess
+[       OK ] ExecutorTest.ReadFileContentSuccess (0 ms)
+[----------] 1 test from ExecutorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ExecutorTest.ReadFileContentSuccess" end time: Sep 09 11:44 +07
+"ExecutorTest.ReadFileContentSuccess" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: ExecutorTest.KillProcessInvalidPid
+5/6 Test: ExecutorTest.KillProcessInvalidPid
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ExecutorTest.KillProcessInvalidPid" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ExecutorTest.KillProcessInvalidPid" start time: Sep 09 11:44 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ExecutorTest.KillProcessInvalidPid
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExecutorTest
+[ RUN      ] ExecutorTest.KillProcessInvalidPid
+[       OK ] ExecutorTest.KillProcessInvalidPid (0 ms)
+[----------] 1 test from ExecutorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ExecutorTest.KillProcessInvalidPid" end time: Sep 09 11:44 +07
+"ExecutorTest.KillProcessInvalidPid" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: FileTransferTest.Stream5MBFileMatchesExactly
+6/6 Test: FileTransferTest.Stream5MBFileMatchesExactly
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=FileTransferTest.Stream5MBFileMatchesExactly" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"FileTransferTest.Stream5MBFileMatchesExactly" start time: Sep 09 11:44 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = FileTransferTest.Stream5MBFileMatchesExactly
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from FileTransferTest
+[ RUN      ] FileTransferTest.Stream5MBFileMatchesExactly
+[*] Dang tai: 1% (65536/5242880 bytes)[*] Dang tai: 2% (131072/5242880 bytes)[*] Dang tai: 3% (196608/5242880 bytes)[*] Dang tai: 5% (262144/5242880 bytes)[*] Dang tai: 6% (327680/5242880 bytes)[*] Dang tai: 7% (393216/5242880 bytes)[*] Dang tai: 8% (458752/5242880 bytes)[*] Dang tai: 10% (524288/5242880 bytes)[*] Dang tai: 11% (589824/5242880 bytes)[*] Dang tai: 12% (655360/5242880 bytes)[*] Dang tai: 13% (720896/5242880 bytes)[*] Dang tai: 15% (786432/5242880 bytes)[*] Dang tai: 16% (851968/5242880 bytes)[*] Dang tai: 17% (917504/5242880 bytes)[*] Dang tai: 18% (983040/5242880 bytes)[*] Dang tai: 20% (1048576/5242880 bytes)[*] Dang tai: 21% (1114112/5242880 bytes)[*] Dang tai: 22% (1179648/5242880 bytes)[*] Dang tai: 23% (1245184/5242880 bytes)[*] Dang tai: 25% (1310720/5242880 bytes)[*] Dang tai: 26% (1376256/5242880 bytes)[*] Dang tai: 27% (1441792/5242880 bytes)[*] Dang tai: 28% (1507328/5242880 bytes)[*] Dang tai: 30% (1572864/5242880 bytes)[*] Dang tai: 31% (1638400/5242880 bytes)[*] Dang tai: 32% (1703936/5242880 bytes)[*] Dang tai: 33% (1769472/5242880 bytes)[*] Dang tai: 35% (1835008/5242880 bytes)[*] Dang tai: 36% (1900544/5242880 bytes)[*] Dang tai: 37% (1966080/5242880 bytes)[*] Dang tai: 38% (2031616/5242880 bytes)[*] Dang tai: 40% (2097152/5242880 bytes)[*] Dang tai: 41% (2162688/5242880 bytes)[*] Dang tai: 42% (2228224/5242880 bytes)[*] Dang tai: 43% (2293760/5242880 bytes)[*] Dang tai: 45% (2359296/5242880 bytes)[*] Dang tai: 46% (2424832/5242880 bytes)[*] Dang tai: 47% (2490368/5242880 bytes)[*] Dang tai: 48% (2555904/5242880 bytes)[*] Dang tai: 50% (2621440/5242880 bytes)[*] Dang tai: 51% (2686976/5242880 bytes)[*] Dang tai: 52% (2752512/5242880 bytes)[*] Dang tai: 53% (2818048/5242880 bytes)[*] Dang tai: 55% (2883584/5242880 bytes)[*] Dang tai: 56% (2949120/5242880 bytes)[*] Dang tai: 57% (3014656/5242880 bytes)[*] Dang tai: 58% (3080192/5242880 bytes)[*] Dang tai: 60% (3145728/5242880 bytes)[*] Dang tai: 61% (3211264/5242880 bytes)[*] Dang tai: 62% (3276800/5242880 bytes)[*] Dang tai: 63% (3342336/5242880 bytes)[*] Dang tai: 65% (3407872/5242880 bytes)[*] Dang tai: 66% (3473408/5242880 bytes)[*] Dang tai: 67% (3538944/5242880 bytes)[*] Dang tai: 68% (3604480/5242880 bytes)[*] Dang tai: 70% (3670016/5242880 bytes)[*] Dang tai: 71% (3735552/5242880 bytes)[*] Dang tai: 72% (3801088/5242880 bytes)[*] Dang tai: 73% (3866624/5242880 bytes)[*] Dang tai: 75% (3932160/5242880 bytes)[*] Dang tai: 76% (3997696/5242880 bytes)[*] Dang tai: 77% (4063232/5242880 bytes)[*] Dang tai: 78% (4128768/5242880 bytes)[*] Dang tai: 80% (4194304/5242880 bytes)[*] Dang tai: 81% (4259840/5242880 bytes)[*] Dang tai: 82% (4325376/5242880 bytes)[*] Dang tai: 83% (4390912/5242880 bytes)[*] Dang tai: 85% (4456448/5242880 bytes)[*] Dang tai: 86% (4521984/5242880 bytes)[*] Dang tai: 87% (4587520/5242880 bytes)[*] Dang tai: 88% (4653056/5242880 bytes)[*] Dang tai: 90% (4718592/5242880 bytes)[*] Dang tai: 91% (4784128/5242880 bytes)[*] Dang tai: 92% (4849664/5242880 bytes)[*] Dang tai: 93% (4915200/5242880 bytes)[*] Dang tai: 95% (4980736/5242880 bytes)[*] Dang tai: 96% (5046272/5242880 bytes)[*] Dang tai: 97% (5111808/5242880 bytes)[*] Dang tai: 98% (5177344/5242880 bytes)[*] Dang tai: 100% (5242880/5242880 bytes)
+[+] Tai file thanh cong! Luu tai: /tmp/rat_test_dst_5mb.bin
+[       OK ] FileTransferTest.Stream5MBFileMatchesExactly (14 ms)
+[----------] 1 test from FileTransferTest (14 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (14 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"FileTransferTest.Stream5MBFileMatchesExactly" end time: Sep 09 11:44 +07
+"FileTransferTest.Stream5MBFileMatchesExactly" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 09 11:44 +07

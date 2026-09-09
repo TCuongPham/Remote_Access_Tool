@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/ptc/projects/RAT/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -84,6 +94,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -155,6 +210,71 @@ bin_client/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bin_client.dir/build.make CMakeFiles/bin_client.dir/build
 .PHONY : bin_client/fast
 
+#=============================================================================
+# Target rules for targets named rat_unit_tests
+
+# Build rule for target.
+rat_unit_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rat_unit_tests
+.PHONY : rat_unit_tests
+
+# fast build rule for target.
+rat_unit_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/build
+.PHONY : rat_unit_tests/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
 client/client.o: client/client.cpp.o
 .PHONY : client/client.o
 
@@ -185,6 +305,7 @@ client/executor.o: client/executor.cpp.o
 # target to build an object file
 client/executor.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bin_client.dir/build.make CMakeFiles/bin_client.dir/client/executor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o
 .PHONY : client/executor.cpp.o
 
 client/executor.i: client/executor.cpp.i
@@ -193,6 +314,7 @@ client/executor.i: client/executor.cpp.i
 # target to preprocess a source file
 client/executor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bin_client.dir/build.make CMakeFiles/bin_client.dir/client/executor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/client/executor.cpp.i
 .PHONY : client/executor.cpp.i
 
 client/executor.s: client/executor.cpp.s
@@ -201,6 +323,7 @@ client/executor.s: client/executor.cpp.s
 # target to generate assembly for a file
 client/executor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bin_client.dir/build.make CMakeFiles/bin_client.dir/client/executor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/client/executor.cpp.s
 .PHONY : client/executor.cpp.s
 
 client/main_client.o: client/main_client.cpp.o
@@ -299,6 +422,102 @@ server/server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bin_server.dir/build.make CMakeFiles/bin_server.dir/server/server.cpp.s
 .PHONY : server/server.cpp.s
 
+tests/test_executor.o: tests/test_executor.cpp.o
+.PHONY : tests/test_executor.o
+
+# target to build an object file
+tests/test_executor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o
+.PHONY : tests/test_executor.cpp.o
+
+tests/test_executor.i: tests/test_executor.cpp.i
+.PHONY : tests/test_executor.i
+
+# target to preprocess a source file
+tests/test_executor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.i
+.PHONY : tests/test_executor.cpp.i
+
+tests/test_executor.s: tests/test_executor.cpp.s
+.PHONY : tests/test_executor.s
+
+# target to generate assembly for a file
+tests/test_executor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.s
+.PHONY : tests/test_executor.cpp.s
+
+tests/test_file_transfer.o: tests/test_file_transfer.cpp.o
+.PHONY : tests/test_file_transfer.o
+
+# target to build an object file
+tests/test_file_transfer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o
+.PHONY : tests/test_file_transfer.cpp.o
+
+tests/test_file_transfer.i: tests/test_file_transfer.cpp.i
+.PHONY : tests/test_file_transfer.i
+
+# target to preprocess a source file
+tests/test_file_transfer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.i
+.PHONY : tests/test_file_transfer.cpp.i
+
+tests/test_file_transfer.s: tests/test_file_transfer.cpp.s
+.PHONY : tests/test_file_transfer.s
+
+# target to generate assembly for a file
+tests/test_file_transfer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.s
+.PHONY : tests/test_file_transfer.cpp.s
+
+tests/test_main.o: tests/test_main.cpp.o
+.PHONY : tests/test_main.o
+
+# target to build an object file
+tests/test_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_main.cpp.o
+.PHONY : tests/test_main.cpp.o
+
+tests/test_main.i: tests/test_main.cpp.i
+.PHONY : tests/test_main.i
+
+# target to preprocess a source file
+tests/test_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_main.cpp.i
+.PHONY : tests/test_main.cpp.i
+
+tests/test_main.s: tests/test_main.cpp.s
+.PHONY : tests/test_main.s
+
+# target to generate assembly for a file
+tests/test_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_main.cpp.s
+.PHONY : tests/test_main.cpp.s
+
+tests/test_socket_utils.o: tests/test_socket_utils.cpp.o
+.PHONY : tests/test_socket_utils.o
+
+# target to build an object file
+tests/test_socket_utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o
+.PHONY : tests/test_socket_utils.cpp.o
+
+tests/test_socket_utils.i: tests/test_socket_utils.cpp.i
+.PHONY : tests/test_socket_utils.i
+
+# target to preprocess a source file
+tests/test_socket_utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.i
+.PHONY : tests/test_socket_utils.cpp.i
+
+tests/test_socket_utils.s: tests/test_socket_utils.cpp.s
+.PHONY : tests/test_socket_utils.s
+
+# target to generate assembly for a file
+tests/test_socket_utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.s
+.PHONY : tests/test_socket_utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -306,10 +525,20 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... bin_client"
 	@echo "... bin_server"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... rat_common"
+	@echo "... rat_unit_tests"
 	@echo "... client/client.o"
 	@echo "... client/client.i"
 	@echo "... client/client.s"
@@ -328,6 +557,18 @@ help:
 	@echo "... server/server.o"
 	@echo "... server/server.i"
 	@echo "... server/server.s"
+	@echo "... tests/test_executor.o"
+	@echo "... tests/test_executor.i"
+	@echo "... tests/test_executor.s"
+	@echo "... tests/test_file_transfer.o"
+	@echo "... tests/test_file_transfer.i"
+	@echo "... tests/test_file_transfer.s"
+	@echo "... tests/test_main.o"
+	@echo "... tests/test_main.i"
+	@echo "... tests/test_main.s"
+	@echo "... tests/test_socket_utils.o"
+	@echo "... tests/test_socket_utils.i"
+	@echo "... tests/test_socket_utils.s"
 .PHONY : help
 
 

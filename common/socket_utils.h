@@ -15,6 +15,11 @@ namespace RAT{
     // Nhận một thông điệp (message) có đính kèm header từ socket
     bool recv_message(int sock, std::string& msg);
 
+    // Gửi file từ đĩa qua socket theo từng khối 64KB (Client)
+    bool send_file_stream(int sock, const std::string &filepath);
+    // Nhận từng khối 64KB từ socket và ghi xuống đĩa (Server)
+    bool recv_file_stream(int sock, const std::string &save_path);
+
     // Đóng socket và đặt giá trị socket về -1
     void close_socket(int& sock);
 }
