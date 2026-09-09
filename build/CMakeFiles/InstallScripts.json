@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/ptc/projects/RAT/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,5 @@
+/home/ptc/projects/RAT/build/CMakeFiles/rat_common.dir
+/home/ptc/projects/RAT/build/CMakeFiles/bin_server.dir
+/home/ptc/projects/RAT/build/CMakeFiles/bin_client.dir
+/home/ptc/projects/RAT/build/CMakeFiles/edit_cache.dir
+/home/ptc/projects/RAT/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,2 @@
+/usr/bin/ar qc librat_common.a CMakeFiles/rat_common.dir/common/socket_utils.cpp.o
+/usr/bin/ranlib librat_common.a
