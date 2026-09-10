@@ -10,9 +10,8 @@ int main() {
     }
 
     // Chờ client kết nối và khởi động shell
-    if (server.wait_for_client()) {
-        server.run_shell();
-    }
+    server.run_shell();
+    
     std::cout << "[*] Server da dung.\n";
     return 0;
 }

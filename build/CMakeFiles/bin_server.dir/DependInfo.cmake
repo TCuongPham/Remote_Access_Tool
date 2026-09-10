@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ptc/projects/RAT/server/main_server.cpp" "CMakeFiles/bin_server.dir/server/main_server.cpp.o" "gcc" "CMakeFiles/bin_server.dir/server/main_server.cpp.o.d"
   "/home/ptc/projects/RAT/server/server.cpp" "CMakeFiles/bin_server.dir/server/server.cpp.o" "gcc" "CMakeFiles/bin_server.dir/server/server.cpp.o.d"
+  "/home/ptc/projects/RAT/server/session_manager.cpp" "CMakeFiles/bin_server.dir/server/session_manager.cpp.o" "gcc" "CMakeFiles/bin_server.dir/server/session_manager.cpp.o.d"
   "" "bin_server" "gcc" "CMakeFiles/bin_server.dir/link.d"
   )
 

@@ -3,10 +3,14 @@ rat_unit_tests: \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
   CMakeFiles/rat_unit_tests.dir/tests/test_main.cpp.o \
+  CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o \
   CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o \
   CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o \
   CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o \
+  CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o \
   CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o \
+  CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o \
+  CMakeFiles/rat_unit_tests.dir/server/server.cpp.o \
   librat_common.a \
   lib/libgtest.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
@@ -45,13 +49,21 @@ rat_unit_tests: \
 
 CMakeFiles/rat_unit_tests.dir/tests/test_main.cpp.o:
 
+CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o:
+
 CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o:
 
 CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o:
 
 CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o:
 
+CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o:
+
 CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o:
+
+CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o:
+
+CMakeFiles/rat_unit_tests.dir/server/server.cpp.o:
 
 librat_common.a:
 

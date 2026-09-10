@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ptc/projects/RAT/common -I/home/ptc/projects/RAT/client -isystem /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include -isystem /home/ptc/projects/RAT/build/_deps/googletest-src/googletest
+CXX_INCLUDES = -I/home/ptc/projects/RAT/common -I/home/ptc/projects/RAT/client -I/home/ptc/projects/RAT/server -isystem /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include -isystem /home/ptc/projects/RAT/build/_deps/googletest-src/googletest
 
 CXX_FLAGS = -std=c++17 -Wall -Wextra
 

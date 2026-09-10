@@ -404,6 +404,7 @@ server/server.o: server/server.cpp.o
 # target to build an object file
 server/server.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bin_server.dir/build.make CMakeFiles/bin_server.dir/server/server.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/server/server.cpp.o
 .PHONY : server/server.cpp.o
 
 server/server.i: server/server.cpp.i
@@ -412,6 +413,7 @@ server/server.i: server/server.cpp.i
 # target to preprocess a source file
 server/server.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bin_server.dir/build.make CMakeFiles/bin_server.dir/server/server.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/server/server.cpp.i
 .PHONY : server/server.cpp.i
 
 server/server.s: server/server.cpp.s
@@ -420,7 +422,35 @@ server/server.s: server/server.cpp.s
 # target to generate assembly for a file
 server/server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bin_server.dir/build.make CMakeFiles/bin_server.dir/server/server.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/server/server.cpp.s
 .PHONY : server/server.cpp.s
+
+server/session_manager.o: server/session_manager.cpp.o
+.PHONY : server/session_manager.o
+
+# target to build an object file
+server/session_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bin_server.dir/build.make CMakeFiles/bin_server.dir/server/session_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o
+.PHONY : server/session_manager.cpp.o
+
+server/session_manager.i: server/session_manager.cpp.i
+.PHONY : server/session_manager.i
+
+# target to preprocess a source file
+server/session_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bin_server.dir/build.make CMakeFiles/bin_server.dir/server/session_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.i
+.PHONY : server/session_manager.cpp.i
+
+server/session_manager.s: server/session_manager.cpp.s
+.PHONY : server/session_manager.s
+
+# target to generate assembly for a file
+server/session_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bin_server.dir/build.make CMakeFiles/bin_server.dir/server/session_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.s
+.PHONY : server/session_manager.cpp.s
 
 tests/test_executor.o: tests/test_executor.cpp.o
 .PHONY : tests/test_executor.o
@@ -494,6 +524,54 @@ tests/test_main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_main.cpp.s
 .PHONY : tests/test_main.cpp.s
 
+tests/test_protocol.o: tests/test_protocol.cpp.o
+.PHONY : tests/test_protocol.o
+
+# target to build an object file
+tests/test_protocol.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o
+.PHONY : tests/test_protocol.cpp.o
+
+tests/test_protocol.i: tests/test_protocol.cpp.i
+.PHONY : tests/test_protocol.i
+
+# target to preprocess a source file
+tests/test_protocol.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.i
+.PHONY : tests/test_protocol.cpp.i
+
+tests/test_protocol.s: tests/test_protocol.cpp.s
+.PHONY : tests/test_protocol.s
+
+# target to generate assembly for a file
+tests/test_protocol.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.s
+.PHONY : tests/test_protocol.cpp.s
+
+tests/test_server.o: tests/test_server.cpp.o
+.PHONY : tests/test_server.o
+
+# target to build an object file
+tests/test_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o
+.PHONY : tests/test_server.cpp.o
+
+tests/test_server.i: tests/test_server.cpp.i
+.PHONY : tests/test_server.i
+
+# target to preprocess a source file
+tests/test_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.i
+.PHONY : tests/test_server.cpp.i
+
+tests/test_server.s: tests/test_server.cpp.s
+.PHONY : tests/test_server.s
+
+# target to generate assembly for a file
+tests/test_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rat_unit_tests.dir/build.make CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.s
+.PHONY : tests/test_server.cpp.s
+
 tests/test_socket_utils.o: tests/test_socket_utils.cpp.o
 .PHONY : tests/test_socket_utils.o
 
@@ -557,6 +635,9 @@ help:
 	@echo "... server/server.o"
 	@echo "... server/server.i"
 	@echo "... server/server.s"
+	@echo "... server/session_manager.o"
+	@echo "... server/session_manager.i"
+	@echo "... server/session_manager.s"
 	@echo "... tests/test_executor.o"
 	@echo "... tests/test_executor.i"
 	@echo "... tests/test_executor.s"
@@ -566,6 +647,12 @@ help:
 	@echo "... tests/test_main.o"
 	@echo "... tests/test_main.i"
 	@echo "... tests/test_main.s"
+	@echo "... tests/test_protocol.o"
+	@echo "... tests/test_protocol.i"
+	@echo "... tests/test_protocol.s"
+	@echo "... tests/test_server.o"
+	@echo "... tests/test_server.i"
+	@echo "... tests/test_server.s"
 	@echo "... tests/test_socket_utils.o"
 	@echo "... tests/test_socket_utils.i"
 	@echo "... tests/test_socket_utils.s"

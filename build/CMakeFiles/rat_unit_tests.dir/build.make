@@ -86,10 +86,24 @@ CMakeFiles/rat_unit_tests.dir/tests/test_main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rat_unit_tests.dir/tests/test_main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ptc/projects/RAT/tests/test_main.cpp -o CMakeFiles/rat_unit_tests.dir/tests/test_main.cpp.s
 
+CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o: CMakeFiles/rat_unit_tests.dir/flags.make
+CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o: /home/ptc/projects/RAT/tests/test_protocol.cpp
+CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o: CMakeFiles/rat_unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o -MF CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o.d -o CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o -c /home/ptc/projects/RAT/tests/test_protocol.cpp
+
+CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ptc/projects/RAT/tests/test_protocol.cpp > CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.i
+
+CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ptc/projects/RAT/tests/test_protocol.cpp -o CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.s
+
 CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o: CMakeFiles/rat_unit_tests.dir/flags.make
 CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o: /home/ptc/projects/RAT/tests/test_socket_utils.cpp
 CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o: CMakeFiles/rat_unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o -MF CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o.d -o CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o -c /home/ptc/projects/RAT/tests/test_socket_utils.cpp
 
 CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.s: cmake_force
 CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o: CMakeFiles/rat_unit_tests.dir/flags.make
 CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o: /home/ptc/projects/RAT/tests/test_executor.cpp
 CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o: CMakeFiles/rat_unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o -MF CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o.d -o CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o -c /home/ptc/projects/RAT/tests/test_executor.cpp
 
 CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.s: cmake_force
 CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o: CMakeFiles/rat_unit_tests.dir/flags.make
 CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o: /home/ptc/projects/RAT/tests/test_file_transfer.cpp
 CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o: CMakeFiles/rat_unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o -MF CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o.d -o CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o -c /home/ptc/projects/RAT/tests/test_file_transfer.cpp
 
 CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.i: cmake_force
@@ -128,10 +142,24 @@ CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ptc/projects/RAT/tests/test_file_transfer.cpp -o CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.s
 
+CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o: CMakeFiles/rat_unit_tests.dir/flags.make
+CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o: /home/ptc/projects/RAT/tests/test_server.cpp
+CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o: CMakeFiles/rat_unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o -MF CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o.d -o CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o -c /home/ptc/projects/RAT/tests/test_server.cpp
+
+CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ptc/projects/RAT/tests/test_server.cpp > CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.i
+
+CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ptc/projects/RAT/tests/test_server.cpp -o CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.s
+
 CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o: CMakeFiles/rat_unit_tests.dir/flags.make
 CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o: /home/ptc/projects/RAT/client/executor.cpp
 CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o: CMakeFiles/rat_unit_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o -MF CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o.d -o CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o -c /home/ptc/projects/RAT/client/executor.cpp
 
 CMakeFiles/rat_unit_tests.dir/client/executor.cpp.i: cmake_force
@@ -142,28 +170,64 @@ CMakeFiles/rat_unit_tests.dir/client/executor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rat_unit_tests.dir/client/executor.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ptc/projects/RAT/client/executor.cpp -o CMakeFiles/rat_unit_tests.dir/client/executor.cpp.s
 
+CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o: CMakeFiles/rat_unit_tests.dir/flags.make
+CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o: /home/ptc/projects/RAT/server/session_manager.cpp
+CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o: CMakeFiles/rat_unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o -MF CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o.d -o CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o -c /home/ptc/projects/RAT/server/session_manager.cpp
+
+CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ptc/projects/RAT/server/session_manager.cpp > CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.i
+
+CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ptc/projects/RAT/server/session_manager.cpp -o CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.s
+
+CMakeFiles/rat_unit_tests.dir/server/server.cpp.o: CMakeFiles/rat_unit_tests.dir/flags.make
+CMakeFiles/rat_unit_tests.dir/server/server.cpp.o: /home/ptc/projects/RAT/server/server.cpp
+CMakeFiles/rat_unit_tests.dir/server/server.cpp.o: CMakeFiles/rat_unit_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/rat_unit_tests.dir/server/server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rat_unit_tests.dir/server/server.cpp.o -MF CMakeFiles/rat_unit_tests.dir/server/server.cpp.o.d -o CMakeFiles/rat_unit_tests.dir/server/server.cpp.o -c /home/ptc/projects/RAT/server/server.cpp
+
+CMakeFiles/rat_unit_tests.dir/server/server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/rat_unit_tests.dir/server/server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ptc/projects/RAT/server/server.cpp > CMakeFiles/rat_unit_tests.dir/server/server.cpp.i
+
+CMakeFiles/rat_unit_tests.dir/server/server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/rat_unit_tests.dir/server/server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ptc/projects/RAT/server/server.cpp -o CMakeFiles/rat_unit_tests.dir/server/server.cpp.s
+
 # Object files for target rat_unit_tests
 rat_unit_tests_OBJECTS = \
 "CMakeFiles/rat_unit_tests.dir/tests/test_main.cpp.o" \
+"CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o" \
 "CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o" \
 "CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o" \
 "CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o" \
-"CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o"
+"CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o" \
+"CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o" \
+"CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o" \
+"CMakeFiles/rat_unit_tests.dir/server/server.cpp.o"
 
 # External object files for target rat_unit_tests
 rat_unit_tests_EXTERNAL_OBJECTS =
 
 rat_unit_tests: CMakeFiles/rat_unit_tests.dir/tests/test_main.cpp.o
+rat_unit_tests: CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o
 rat_unit_tests: CMakeFiles/rat_unit_tests.dir/tests/test_socket_utils.cpp.o
 rat_unit_tests: CMakeFiles/rat_unit_tests.dir/tests/test_executor.cpp.o
 rat_unit_tests: CMakeFiles/rat_unit_tests.dir/tests/test_file_transfer.cpp.o
+rat_unit_tests: CMakeFiles/rat_unit_tests.dir/tests/test_server.cpp.o
 rat_unit_tests: CMakeFiles/rat_unit_tests.dir/client/executor.cpp.o
+rat_unit_tests: CMakeFiles/rat_unit_tests.dir/server/session_manager.cpp.o
+rat_unit_tests: CMakeFiles/rat_unit_tests.dir/server/server.cpp.o
 rat_unit_tests: CMakeFiles/rat_unit_tests.dir/build.make
 rat_unit_tests: CMakeFiles/rat_unit_tests.dir/compiler_depend.ts
 rat_unit_tests: librat_common.a
 rat_unit_tests: lib/libgtest.a
 rat_unit_tests: CMakeFiles/rat_unit_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable rat_unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ptc/projects/RAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable rat_unit_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rat_unit_tests.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -D TEST_TARGET=rat_unit_tests -D TEST_EXECUTABLE=/home/ptc/projects/RAT/build/rat_unit_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/ptc/projects/RAT/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=rat_unit_tests_TESTS -D CTEST_FILE=/home/ptc/projects/RAT/build/rat_unit_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_DISCOVERY_EXTRA_ARGS= -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-4.2/Modules/GoogleTestAddTests.cmake
 

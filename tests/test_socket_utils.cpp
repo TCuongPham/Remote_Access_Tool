@@ -37,3 +37,26 @@ TEST_F(SocketUtilsTest, SendAndReceiveEmptyMessage) {
     EXPECT_TRUE(RAT::recv_message(sv[1], received_msg));
     EXPECT_TRUE(received_msg.empty());
 }
+
+// Test 3: Tính toàn vẹn của phân mảnh: Kiểm tra hàm send_exact và recv_exact
+TEST_F(SocketUtilsTest, SendAndRecvExactIntegrity) {
+    // Chuẩn bị buffer nhị phân 1024 bytes với dữ liệu mẫu
+    std::vector<uint8_t> send_buffer(1024);
+    for (size_t i = 0; i < send_buffer.size(); ++i) {
+        send_buffer[i] = static_cast<uint8_t>(i % 256);
+    }
+
+    std::vector<uint8_t> recv_buffer(1024, 0);
+
+    // Gửi chính xác 1024 bytes từ sv[0] và nhận chính xác ở sv[1]
+    EXPECT_TRUE(RAT::send_exact(sv[0], send_buffer.data(), send_buffer.size()));
+    EXPECT_TRUE(RAT::recv_exact(sv[1], recv_buffer.data(), recv_buffer.size()));
+
+    EXPECT_EQ(send_buffer, recv_buffer);
+
+    // Kiểm tra trường hợp tham số không hợp lệ (socket âm hoặc con trỏ null)
+    EXPECT_FALSE(RAT::send_exact(-1, send_buffer.data(), send_buffer.size()));
+    EXPECT_FALSE(RAT::send_exact(sv[0], nullptr, send_buffer.size()));
+    EXPECT_FALSE(RAT::recv_exact(-1, recv_buffer.data(), recv_buffer.size()));
+    EXPECT_FALSE(RAT::recv_exact(sv[1], nullptr, recv_buffer.size()));
+}

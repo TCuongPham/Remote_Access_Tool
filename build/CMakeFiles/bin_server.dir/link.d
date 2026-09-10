@@ -4,6 +4,7 @@ bin_server: \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
   CMakeFiles/bin_server.dir/server/server.cpp.o \
   CMakeFiles/bin_server.dir/server/main_server.cpp.o \
+  CMakeFiles/bin_server.dir/server/session_manager.cpp.o \
   librat_common.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libm.so \
@@ -43,6 +44,8 @@ bin_server: \
 CMakeFiles/bin_server.dir/server/server.cpp.o:
 
 CMakeFiles/bin_server.dir/server/main_server.cpp.o:
+
+CMakeFiles/bin_server.dir/server/session_manager.cpp.o:
 
 librat_common.a:
 

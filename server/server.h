@@ -30,6 +30,12 @@ namespace RAT
         // Đóng socket
         void stop();
 
+        // Kiểm tra tính hợp lệ của command (công khai để có thể Unit Test)
+        bool validate_and_process_command(const std::string &line, std::string &cmd_name, std::string &cmd_args);
+
+        // Truy xuất SessionManager phục vụ kiểm thử và quản lý
+        SessionManager &get_session_manager() { return session_manager_; }
+
     private:
 
         // Luồng ngầm liên tục lắng nghe và accept các Client mới
@@ -43,9 +49,6 @@ namespace RAT
 
         // Hàm xử lý command tương tác 1-1 với Client
         void run_client_shell(std::shared_ptr<ClientSession> session);
-
-        // Kiểm tra tính hợp lệ của command trước khi gửi qua mạng
-        bool validate_and_process_command(const std::string &line, std::string &cmd_name, std::string &cmd_args);
 
         int server_fd_;         // Socket lắng nghe của Server
         int port_;        

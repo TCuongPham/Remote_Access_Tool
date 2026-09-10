@@ -24,12 +24,14 @@ target_include_directories(rat_common PUBLIC
 add_executable(bin_server
     server/server.cpp
     server/main_server.cpp
+    server/session_manager.cpp 
 )
 target_include_directories(bin_server PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/server
 )
 target_link_libraries(bin_server PRIVATE
     rat_common
+    Threads::Threads 
 )
 
 # 3. BIÊN DỊCH CLIENT (bin_client)
@@ -61,15 +63,20 @@ enable_testing()
 # Tạo file thực thi test: rat_unit_tests
 add_executable(rat_unit_tests
     tests/test_main.cpp
+    tests/test_protocol.cpp
     tests/test_socket_utils.cpp
     tests/test_executor.cpp
     tests/test_file_transfer.cpp 
+    tests/test_server.cpp
     client/executor.cpp
+    server/session_manager.cpp
+    server/server.cpp
 )
 # Thêm thư mục include cho rat_unit_tests
 target_include_directories(rat_unit_tests PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/common
     ${CMAKE_CURRENT_SOURCE_DIR}/client
+    ${CMAKE_CURRENT_SOURCE_DIR}/server
 )
 # Liên kết các thư viện với rat_unit_tests
 target_link_libraries(rat_unit_tests PRIVATE

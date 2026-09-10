@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bin_server.dir/server/main_server.cpp.o.d"
   "CMakeFiles/bin_server.dir/server/server.cpp.o"
   "CMakeFiles/bin_server.dir/server/server.cpp.o.d"
+  "CMakeFiles/bin_server.dir/server/session_manager.cpp.o"
+  "CMakeFiles/bin_server.dir/server/session_manager.cpp.o.d"
   "bin_server"
   "bin_server.pdb"
 )

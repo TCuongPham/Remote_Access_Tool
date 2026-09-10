@@ -1,7 +1,7 @@
-CMakeFiles/bin_server.dir/server/server.cpp.o: \
- /home/ptc/projects/RAT/server/server.cpp /usr/include/stdc-predef.h \
- /home/ptc/projects/RAT/server/server.h \
- /home/ptc/projects/RAT/common/protocol.h /usr/include/c++/15/cstdint \
+CMakeFiles/rat_unit_tests.dir/tests/test_protocol.cpp.o: \
+ /home/ptc/projects/RAT/tests/test_protocol.cpp \
+ /usr/include/stdc-predef.h /home/ptc/projects/RAT/common/protocol.h \
+ /usr/include/c++/15/cstdint \
  /usr/include/x86_64-linux-gnu/c++/15/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -120,23 +120,8 @@ CMakeFiles/bin_server.dir/server/server.cpp.o: \
  /usr/include/c++/15/bits/memory_resource.h /usr/include/c++/15/cstddef \
  /usr/include/c++/15/bits/uses_allocator.h \
  /usr/include/c++/15/bits/uses_allocator_args.h /usr/include/c++/15/tuple \
- /home/ptc/projects/RAT/common/socket_utils.h \
- /home/ptc/projects/RAT/server/session_manager.h \
- /usr/include/c++/15/unordered_map \
- /usr/include/c++/15/bits/unordered_map.h \
- /usr/include/c++/15/bits/hashtable.h \
- /usr/include/c++/15/bits/hashtable_policy.h \
- /usr/include/c++/15/ext/aligned_buffer.h \
- /usr/include/c++/15/bits/enable_special_members.h \
- /usr/include/c++/15/bits/node_handle.h \
- /usr/include/c++/15/bits/erase_if.h /usr/include/c++/15/memory \
- /usr/include/c++/15/bits/stl_tempbuf.h \
- /usr/include/c++/15/bits/stl_uninitialized.h \
- /usr/include/c++/15/bits/stl_raw_storage_iter.h \
- /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
- /usr/include/c++/15/bits/shared_ptr.h \
- /usr/include/c++/15/bits/shared_ptr_base.h /usr/include/c++/15/typeinfo \
- /usr/include/c++/15/bits/allocated_ptr.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/gtest.h \
+ /usr/include/c++/15/iomanip /usr/include/c++/15/bits/ios_base.h \
  /usr/include/c++/15/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/15/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h \
@@ -162,50 +147,140 @@ CMakeFiles/bin_server.dir/server/server.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/x86_64-linux-gnu/c++/15/bits/atomic_word.h \
  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
- /usr/include/c++/15/ext/concurrence.h /usr/include/c++/15/exception \
+ /usr/include/c++/15/bits/locale_classes.h \
+ /usr/include/c++/15/bits/locale_classes.tcc \
+ /usr/include/c++/15/system_error \
+ /usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h \
+ /usr/include/c++/15/stdexcept /usr/include/c++/15/exception \
  /usr/include/c++/15/bits/exception_ptr.h \
  /usr/include/c++/15/bits/cxxabi_init_exception.h \
- /usr/include/c++/15/bits/nested_exception.h \
+ /usr/include/c++/15/typeinfo /usr/include/c++/15/bits/nested_exception.h \
+ /usr/include/c++/15/locale /usr/include/c++/15/bits/locale_facets.h \
+ /usr/include/c++/15/cwctype /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h \
+ /usr/include/c++/15/streambuf /usr/include/c++/15/bits/streambuf.tcc \
+ /usr/include/c++/15/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_inline.h \
+ /usr/include/c++/15/bits/locale_facets.tcc \
+ /usr/include/c++/15/bits/locale_facets_nonio.h /usr/include/c++/15/ctime \
+ /usr/include/x86_64-linux-gnu/c++/15/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/15/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/15/bits/codecvt.h \
+ /usr/include/c++/15/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/15/bits/locale_conv.h \
+ /usr/include/c++/15/bits/quoted_string.h /usr/include/c++/15/sstream \
+ /usr/include/c++/15/istream /usr/include/c++/15/ios \
+ /usr/include/c++/15/bits/basic_ios.h \
+ /usr/include/c++/15/bits/basic_ios.tcc /usr/include/c++/15/ostream \
+ /usr/include/c++/15/bits/ostream.h /usr/include/c++/15/bits/ostream.tcc \
+ /usr/include/c++/15/bits/istream.tcc \
+ /usr/include/c++/15/bits/sstream.tcc /usr/include/c++/15/limits \
+ /usr/include/c++/15/memory /usr/include/c++/15/bits/stl_tempbuf.h \
+ /usr/include/c++/15/bits/stl_uninitialized.h \
+ /usr/include/c++/15/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr_base.h \
+ /usr/include/c++/15/bits/allocated_ptr.h \
+ /usr/include/c++/15/ext/aligned_buffer.h \
+ /usr/include/c++/15/ext/concurrence.h \
  /usr/include/c++/15/bits/shared_ptr_atomic.h \
  /usr/include/c++/15/bits/atomic_base.h \
  /usr/include/c++/15/bits/atomic_lockfree_defines.h \
  /usr/include/c++/15/backward/auto_ptr.h \
  /usr/include/c++/15/pstl/glue_memory_defs.h \
- /usr/include/c++/15/pstl/execution_defs.h /usr/include/c++/15/mutex \
- /usr/include/c++/15/bits/chrono.h /usr/include/c++/15/ratio \
- /usr/include/c++/15/limits /usr/include/c++/15/ctime \
- /usr/include/c++/15/bits/parse_numbers.h \
- /usr/include/c++/15/bits/std_mutex.h \
- /usr/include/c++/15/bits/unique_lock.h \
- /usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h \
- /usr/include/c++/15/chrono /usr/include/c++/15/thread \
- /usr/include/c++/15/bits/std_thread.h \
- /usr/include/c++/15/bits/this_thread_sleep.h /usr/include/c++/15/atomic \
- /usr/include/c++/15/iostream /usr/include/c++/15/ostream \
- /usr/include/c++/15/bits/ostream.h /usr/include/c++/15/ios \
- /usr/include/c++/15/bits/ios_base.h \
- /usr/include/c++/15/bits/locale_classes.h \
- /usr/include/c++/15/bits/locale_classes.tcc \
- /usr/include/c++/15/system_error /usr/include/c++/15/stdexcept \
- /usr/include/c++/15/streambuf /usr/include/c++/15/bits/streambuf.tcc \
- /usr/include/c++/15/bits/basic_ios.h \
- /usr/include/c++/15/bits/locale_facets.h /usr/include/c++/15/cwctype \
- /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
- /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h \
- /usr/include/c++/15/bits/streambuf_iterator.h \
- /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_inline.h \
- /usr/include/c++/15/bits/locale_facets.tcc \
- /usr/include/c++/15/bits/basic_ios.tcc \
- /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
- /usr/include/c++/15/bits/istream.tcc /usr/include/c++/15/sstream \
- /usr/include/c++/15/bits/sstream.tcc /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/c++/15/pstl/execution_defs.h /usr/include/c++/15/set \
+ /usr/include/c++/15/bits/stl_tree.h \
+ /usr/include/c++/15/bits/node_handle.h \
+ /usr/include/c++/15/bits/stl_set.h \
+ /usr/include/c++/15/bits/stl_multiset.h \
+ /usr/include/c++/15/bits/erase_if.h /usr/include/c++/15/vector \
+ /usr/include/c++/15/bits/stl_vector.h \
+ /usr/include/c++/15/bits/stl_bvector.h \
+ /usr/include/c++/15/bits/vector.tcc \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/gtest-assertion-result.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/gtest-message.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-port.h \
+ /usr/include/c++/15/stdlib.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/c++/15/iostream \
+ /usr/include/x86_64-linux-gnu/sys/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
+ /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/internal/custom/gtest-port.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-port-arch.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h \
+ /usr/include/linux/close_range.h /usr/include/regex.h \
+ /usr/include/c++/15/condition_variable /usr/include/c++/15/bits/chrono.h \
+ /usr/include/c++/15/ratio /usr/include/c++/15/bits/parse_numbers.h \
+ /usr/include/c++/15/bits/std_mutex.h \
+ /usr/include/c++/15/bits/unique_lock.h /usr/include/c++/15/mutex \
+ /usr/include/c++/15/any /usr/include/c++/15/optional \
+ /usr/include/c++/15/bits/enable_special_members.h \
+ /usr/include/c++/15/variant /usr/include/c++/15/bits/monostate.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/gtest-death-test.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-death-test-internal.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/gtest-matchers.h \
+ /usr/include/c++/15/atomic /usr/include/c++/15/functional \
+ /usr/include/c++/15/bits/std_function.h \
+ /usr/include/c++/15/unordered_map \
+ /usr/include/c++/15/bits/unordered_map.h \
+ /usr/include/c++/15/bits/hashtable.h \
+ /usr/include/c++/15/bits/hashtable_policy.h /usr/include/c++/15/array \
+ /usr/include/c++/15/compare \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/gtest-printers.h \
+ /usr/include/c++/15/utility /usr/include/c++/15/bits/stl_relops.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-internal.h \
+ /usr/include/x86_64-linux-gnu/sys/wait.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
+ /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+ /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+ /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
+ /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
+ /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+ /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
+ /usr/include/x86_64-linux-gnu/bits/types/idtype_t.h \
+ /usr/lib/gcc/x86_64-linux-gnu/15/include/float.h /usr/include/c++/15/map \
+ /usr/include/c++/15/bits/stl_map.h \
+ /usr/include/c++/15/bits/stl_multimap.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-filepath.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-string.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-type-util.h \
+ /usr/include/c++/15/cxxabi.h \
+ /usr/include/x86_64-linux-gnu/c++/15/bits/cxxabi_tweaks.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/internal/custom/gtest-printers.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/gtest-param-test.h \
+ /usr/include/c++/15/iterator /usr/include/c++/15/bits/stream_iterator.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/internal/gtest-param-util.h \
+ /usr/include/c++/15/cassert /usr/include/assert.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/gtest-test-part.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/gtest-typed-test.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/gtest_pred_impl.h \
+ /home/ptc/projects/RAT/build/_deps/googletest-src/googletest/include/gtest/gtest_prod.h \
+ /usr/include/arpa/inet.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
@@ -216,22 +291,4 @@ CMakeFiles/bin_server.dir/server/server.cpp.o: \
  /usr/include/x86_64-linux-gnu/asm/sockios.h \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
- /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/bits/in.h \
- /usr/include/arpa/inet.h /usr/include/c++/15/cstring \
- /usr/include/string.h /usr/include/strings.h /usr/include/c++/15/future \
- /usr/include/c++/15/condition_variable \
- /usr/include/c++/15/bits/atomic_futex.h \
- /usr/include/c++/15/bits/std_function.h /usr/include/c++/15/vector \
- /usr/include/c++/15/bits/stl_vector.h \
- /usr/include/c++/15/bits/stl_bvector.h \
- /usr/include/c++/15/bits/vector.tcc /usr/include/c++/15/iomanip \
- /usr/include/c++/15/locale \
- /usr/include/c++/15/bits/locale_facets_nonio.h \
- /usr/include/x86_64-linux-gnu/c++/15/bits/time_members.h \
- /usr/include/x86_64-linux-gnu/c++/15/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/15/bits/codecvt.h \
- /usr/include/c++/15/bits/locale_facets_nonio.tcc \
- /usr/include/c++/15/bits/locale_conv.h \
- /usr/include/c++/15/bits/quoted_string.h /usr/include/poll.h \
- /usr/include/x86_64-linux-gnu/sys/poll.h \
- /usr/include/x86_64-linux-gnu/bits/poll.h
+ /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/c++/15/cstring

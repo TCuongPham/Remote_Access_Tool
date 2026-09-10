@@ -49,6 +49,5 @@ namespace RAT
         std::unordered_map<int, std::shared_ptr<ClientSession>> sessions_;
 
         std::mutex map_mtx_; // Khóa bảo vệ danh sách sessions_
-        int next_id_ = 1;    // ID tự tăng
     };
 }

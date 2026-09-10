@@ -1,10 +1,114 @@
-Start testing: Sep 09 11:44 +07
+Start testing: Sep 10 11:27 +07
 ----------------------------------------------------------
-1/6 Testing: SocketUtilsTest.SendAndReceiveStringMessage
-1/6 Test: SocketUtilsTest.SendAndReceiveStringMessage
+1/32 Testing: ProtocolTest.ProtocolConstants
+1/32 Test: ProtocolTest.ProtocolConstants
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ProtocolTest.ProtocolConstants" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ProtocolTest.ProtocolConstants" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ProtocolTest.ProtocolConstants
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ProtocolTest
+[ RUN      ] ProtocolTest.ProtocolConstants
+[       OK ] ProtocolTest.ProtocolConstants (0 ms)
+[----------] 1 test from ProtocolTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ProtocolTest.ProtocolConstants" end time: Sep 10 11:27 +07
+"ProtocolTest.ProtocolConstants" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/32 Testing: ProtocolTest.CommandAndStatusStrings
+2/32 Test: ProtocolTest.CommandAndStatusStrings
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ProtocolTest.CommandAndStatusStrings" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ProtocolTest.CommandAndStatusStrings" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ProtocolTest.CommandAndStatusStrings
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ProtocolTest
+[ RUN      ] ProtocolTest.CommandAndStatusStrings
+[       OK ] ProtocolTest.CommandAndStatusStrings (0 ms)
+[----------] 1 test from ProtocolTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ProtocolTest.CommandAndStatusStrings" end time: Sep 10 11:27 +07
+"ProtocolTest.CommandAndStatusStrings" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/32 Testing: ProtocolTest.FileTransferHeaderLayout
+3/32 Test: ProtocolTest.FileTransferHeaderLayout
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ProtocolTest.FileTransferHeaderLayout" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ProtocolTest.FileTransferHeaderLayout" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ProtocolTest.FileTransferHeaderLayout
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ProtocolTest
+[ RUN      ] ProtocolTest.FileTransferHeaderLayout
+[       OK ] ProtocolTest.FileTransferHeaderLayout (0 ms)
+[----------] 1 test from ProtocolTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ProtocolTest.FileTransferHeaderLayout" end time: Sep 10 11:27 +07
+"ProtocolTest.FileTransferHeaderLayout" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/32 Testing: ProtocolTest.EndianConversionIntegrity
+4/32 Test: ProtocolTest.EndianConversionIntegrity
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ProtocolTest.EndianConversionIntegrity" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ProtocolTest.EndianConversionIntegrity" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ProtocolTest.EndianConversionIntegrity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ProtocolTest
+[ RUN      ] ProtocolTest.EndianConversionIntegrity
+[       OK ] ProtocolTest.EndianConversionIntegrity (0 ms)
+[----------] 1 test from ProtocolTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ProtocolTest.EndianConversionIntegrity" end time: Sep 10 11:27 +07
+"ProtocolTest.EndianConversionIntegrity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/32 Testing: SocketUtilsTest.SendAndReceiveStringMessage
+5/32 Test: SocketUtilsTest.SendAndReceiveStringMessage
 Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SocketUtilsTest.SendAndReceiveStringMessage" "--gtest_also_run_disabled_tests"
 Directory: /home/ptc/projects/RAT/build
-"SocketUtilsTest.SendAndReceiveStringMessage" start time: Sep 09 11:44 +07
+"SocketUtilsTest.SendAndReceiveStringMessage" start time: Sep 10 11:27 +07
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = SocketUtilsTest.SendAndReceiveStringMessage
@@ -22,15 +126,15 @@ Note: Google Test filter = SocketUtilsTest.SendAndReceiveStringMessage
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"SocketUtilsTest.SendAndReceiveStringMessage" end time: Sep 09 11:44 +07
+"SocketUtilsTest.SendAndReceiveStringMessage" end time: Sep 10 11:27 +07
 "SocketUtilsTest.SendAndReceiveStringMessage" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/6 Testing: SocketUtilsTest.SendAndReceiveEmptyMessage
-2/6 Test: SocketUtilsTest.SendAndReceiveEmptyMessage
+6/32 Testing: SocketUtilsTest.SendAndReceiveEmptyMessage
+6/32 Test: SocketUtilsTest.SendAndReceiveEmptyMessage
 Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SocketUtilsTest.SendAndReceiveEmptyMessage" "--gtest_also_run_disabled_tests"
 Directory: /home/ptc/projects/RAT/build
-"SocketUtilsTest.SendAndReceiveEmptyMessage" start time: Sep 09 11:44 +07
+"SocketUtilsTest.SendAndReceiveEmptyMessage" start time: Sep 10 11:27 +07
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = SocketUtilsTest.SendAndReceiveEmptyMessage
@@ -48,15 +152,41 @@ Note: Google Test filter = SocketUtilsTest.SendAndReceiveEmptyMessage
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"SocketUtilsTest.SendAndReceiveEmptyMessage" end time: Sep 09 11:44 +07
+"SocketUtilsTest.SendAndReceiveEmptyMessage" end time: Sep 10 11:27 +07
 "SocketUtilsTest.SendAndReceiveEmptyMessage" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/6 Testing: ExecutorTest.ListDirectoryNonExistentPath
-3/6 Test: ExecutorTest.ListDirectoryNonExistentPath
+7/32 Testing: SocketUtilsTest.SendAndRecvExactIntegrity
+7/32 Test: SocketUtilsTest.SendAndRecvExactIntegrity
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SocketUtilsTest.SendAndRecvExactIntegrity" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"SocketUtilsTest.SendAndRecvExactIntegrity" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = SocketUtilsTest.SendAndRecvExactIntegrity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SocketUtilsTest
+[ RUN      ] SocketUtilsTest.SendAndRecvExactIntegrity
+[       OK ] SocketUtilsTest.SendAndRecvExactIntegrity (0 ms)
+[----------] 1 test from SocketUtilsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SocketUtilsTest.SendAndRecvExactIntegrity" end time: Sep 10 11:27 +07
+"SocketUtilsTest.SendAndRecvExactIntegrity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/32 Testing: ExecutorTest.ListDirectoryNonExistentPath
+8/32 Test: ExecutorTest.ListDirectoryNonExistentPath
 Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ExecutorTest.ListDirectoryNonExistentPath" "--gtest_also_run_disabled_tests"
 Directory: /home/ptc/projects/RAT/build
-"ExecutorTest.ListDirectoryNonExistentPath" start time: Sep 09 11:44 +07
+"ExecutorTest.ListDirectoryNonExistentPath" start time: Sep 10 11:27 +07
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = ExecutorTest.ListDirectoryNonExistentPath
@@ -74,15 +204,41 @@ Note: Google Test filter = ExecutorTest.ListDirectoryNonExistentPath
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"ExecutorTest.ListDirectoryNonExistentPath" end time: Sep 09 11:44 +07
+"ExecutorTest.ListDirectoryNonExistentPath" end time: Sep 10 11:27 +07
 "ExecutorTest.ListDirectoryNonExistentPath" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/6 Testing: ExecutorTest.ReadFileContentSuccess
-4/6 Test: ExecutorTest.ReadFileContentSuccess
+9/32 Testing: ExecutorTest.ListDirectoryCurrentPathSuccess
+9/32 Test: ExecutorTest.ListDirectoryCurrentPathSuccess
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ExecutorTest.ListDirectoryCurrentPathSuccess" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ExecutorTest.ListDirectoryCurrentPathSuccess" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ExecutorTest.ListDirectoryCurrentPathSuccess
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExecutorTest
+[ RUN      ] ExecutorTest.ListDirectoryCurrentPathSuccess
+[       OK ] ExecutorTest.ListDirectoryCurrentPathSuccess (0 ms)
+[----------] 1 test from ExecutorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ExecutorTest.ListDirectoryCurrentPathSuccess" end time: Sep 10 11:27 +07
+"ExecutorTest.ListDirectoryCurrentPathSuccess" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/32 Testing: ExecutorTest.ReadFileContentSuccess
+10/32 Test: ExecutorTest.ReadFileContentSuccess
 Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ExecutorTest.ReadFileContentSuccess" "--gtest_also_run_disabled_tests"
 Directory: /home/ptc/projects/RAT/build
-"ExecutorTest.ReadFileContentSuccess" start time: Sep 09 11:44 +07
+"ExecutorTest.ReadFileContentSuccess" start time: Sep 10 11:27 +07
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = ExecutorTest.ReadFileContentSuccess
@@ -100,15 +256,41 @@ Note: Google Test filter = ExecutorTest.ReadFileContentSuccess
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"ExecutorTest.ReadFileContentSuccess" end time: Sep 09 11:44 +07
+"ExecutorTest.ReadFileContentSuccess" end time: Sep 10 11:27 +07
 "ExecutorTest.ReadFileContentSuccess" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/6 Testing: ExecutorTest.KillProcessInvalidPid
-5/6 Test: ExecutorTest.KillProcessInvalidPid
+11/32 Testing: ExecutorTest.ReadFileContentNonExistentPath
+11/32 Test: ExecutorTest.ReadFileContentNonExistentPath
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ExecutorTest.ReadFileContentNonExistentPath" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ExecutorTest.ReadFileContentNonExistentPath" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ExecutorTest.ReadFileContentNonExistentPath
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExecutorTest
+[ RUN      ] ExecutorTest.ReadFileContentNonExistentPath
+[       OK ] ExecutorTest.ReadFileContentNonExistentPath (0 ms)
+[----------] 1 test from ExecutorTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ExecutorTest.ReadFileContentNonExistentPath" end time: Sep 10 11:27 +07
+"ExecutorTest.ReadFileContentNonExistentPath" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/32 Testing: ExecutorTest.KillProcessInvalidPid
+12/32 Test: ExecutorTest.KillProcessInvalidPid
 Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ExecutorTest.KillProcessInvalidPid" "--gtest_also_run_disabled_tests"
 Directory: /home/ptc/projects/RAT/build
-"ExecutorTest.KillProcessInvalidPid" start time: Sep 09 11:44 +07
+"ExecutorTest.KillProcessInvalidPid" start time: Sep 10 11:27 +07
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = ExecutorTest.KillProcessInvalidPid
@@ -126,15 +308,41 @@ Note: Google Test filter = ExecutorTest.KillProcessInvalidPid
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"ExecutorTest.KillProcessInvalidPid" end time: Sep 09 11:44 +07
+"ExecutorTest.KillProcessInvalidPid" end time: Sep 10 11:27 +07
 "ExecutorTest.KillProcessInvalidPid" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-6/6 Testing: FileTransferTest.Stream5MBFileMatchesExactly
-6/6 Test: FileTransferTest.Stream5MBFileMatchesExactly
+13/32 Testing: ExecutorTest.ListProcessesSuccess
+13/32 Test: ExecutorTest.ListProcessesSuccess
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ExecutorTest.ListProcessesSuccess" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ExecutorTest.ListProcessesSuccess" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ExecutorTest.ListProcessesSuccess
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExecutorTest
+[ RUN      ] ExecutorTest.ListProcessesSuccess
+[       OK ] ExecutorTest.ListProcessesSuccess (0 ms)
+[----------] 1 test from ExecutorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ExecutorTest.ListProcessesSuccess" end time: Sep 10 11:27 +07
+"ExecutorTest.ListProcessesSuccess" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/32 Testing: FileTransferTest.Stream5MBFileMatchesExactly
+14/32 Test: FileTransferTest.Stream5MBFileMatchesExactly
 Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=FileTransferTest.Stream5MBFileMatchesExactly" "--gtest_also_run_disabled_tests"
 Directory: /home/ptc/projects/RAT/build
-"FileTransferTest.Stream5MBFileMatchesExactly" start time: Sep 09 11:44 +07
+"FileTransferTest.Stream5MBFileMatchesExactly" start time: Sep 10 11:27 +07
 Output:
 ----------------------------------------------------------
 Note: Google Test filter = FileTransferTest.Stream5MBFileMatchesExactly
@@ -144,18 +352,501 @@ Note: Google Test filter = FileTransferTest.Stream5MBFileMatchesExactly
 [ RUN      ] FileTransferTest.Stream5MBFileMatchesExactly
 [*] Dang tai: 1% (65536/5242880 bytes)[*] Dang tai: 2% (131072/5242880 bytes)[*] Dang tai: 3% (196608/5242880 bytes)[*] Dang tai: 5% (262144/5242880 bytes)[*] Dang tai: 6% (327680/5242880 bytes)[*] Dang tai: 7% (393216/5242880 bytes)[*] Dang tai: 8% (458752/5242880 bytes)[*] Dang tai: 10% (524288/5242880 bytes)[*] Dang tai: 11% (589824/5242880 bytes)[*] Dang tai: 12% (655360/5242880 bytes)[*] Dang tai: 13% (720896/5242880 bytes)[*] Dang tai: 15% (786432/5242880 bytes)[*] Dang tai: 16% (851968/5242880 bytes)[*] Dang tai: 17% (917504/5242880 bytes)[*] Dang tai: 18% (983040/5242880 bytes)[*] Dang tai: 20% (1048576/5242880 bytes)[*] Dang tai: 21% (1114112/5242880 bytes)[*] Dang tai: 22% (1179648/5242880 bytes)[*] Dang tai: 23% (1245184/5242880 bytes)[*] Dang tai: 25% (1310720/5242880 bytes)[*] Dang tai: 26% (1376256/5242880 bytes)[*] Dang tai: 27% (1441792/5242880 bytes)[*] Dang tai: 28% (1507328/5242880 bytes)[*] Dang tai: 30% (1572864/5242880 bytes)[*] Dang tai: 31% (1638400/5242880 bytes)[*] Dang tai: 32% (1703936/5242880 bytes)[*] Dang tai: 33% (1769472/5242880 bytes)[*] Dang tai: 35% (1835008/5242880 bytes)[*] Dang tai: 36% (1900544/5242880 bytes)[*] Dang tai: 37% (1966080/5242880 bytes)[*] Dang tai: 38% (2031616/5242880 bytes)[*] Dang tai: 40% (2097152/5242880 bytes)[*] Dang tai: 41% (2162688/5242880 bytes)[*] Dang tai: 42% (2228224/5242880 bytes)[*] Dang tai: 43% (2293760/5242880 bytes)[*] Dang tai: 45% (2359296/5242880 bytes)[*] Dang tai: 46% (2424832/5242880 bytes)[*] Dang tai: 47% (2490368/5242880 bytes)[*] Dang tai: 48% (2555904/5242880 bytes)[*] Dang tai: 50% (2621440/5242880 bytes)[*] Dang tai: 51% (2686976/5242880 bytes)[*] Dang tai: 52% (2752512/5242880 bytes)[*] Dang tai: 53% (2818048/5242880 bytes)[*] Dang tai: 55% (2883584/5242880 bytes)[*] Dang tai: 56% (2949120/5242880 bytes)[*] Dang tai: 57% (3014656/5242880 bytes)[*] Dang tai: 58% (3080192/5242880 bytes)[*] Dang tai: 60% (3145728/5242880 bytes)[*] Dang tai: 61% (3211264/5242880 bytes)[*] Dang tai: 62% (3276800/5242880 bytes)[*] Dang tai: 63% (3342336/5242880 bytes)[*] Dang tai: 65% (3407872/5242880 bytes)[*] Dang tai: 66% (3473408/5242880 bytes)[*] Dang tai: 67% (3538944/5242880 bytes)[*] Dang tai: 68% (3604480/5242880 bytes)[*] Dang tai: 70% (3670016/5242880 bytes)[*] Dang tai: 71% (3735552/5242880 bytes)[*] Dang tai: 72% (3801088/5242880 bytes)[*] Dang tai: 73% (3866624/5242880 bytes)[*] Dang tai: 75% (3932160/5242880 bytes)[*] Dang tai: 76% (3997696/5242880 bytes)[*] Dang tai: 77% (4063232/5242880 bytes)[*] Dang tai: 78% (4128768/5242880 bytes)[*] Dang tai: 80% (4194304/5242880 bytes)[*] Dang tai: 81% (4259840/5242880 bytes)[*] Dang tai: 82% (4325376/5242880 bytes)[*] Dang tai: 83% (4390912/5242880 bytes)[*] Dang tai: 85% (4456448/5242880 bytes)[*] Dang tai: 86% (4521984/5242880 bytes)[*] Dang tai: 87% (4587520/5242880 bytes)[*] Dang tai: 88% (4653056/5242880 bytes)[*] Dang tai: 90% (4718592/5242880 bytes)[*] Dang tai: 91% (4784128/5242880 bytes)[*] Dang tai: 92% (4849664/5242880 bytes)[*] Dang tai: 93% (4915200/5242880 bytes)[*] Dang tai: 95% (4980736/5242880 bytes)[*] Dang tai: 96% (5046272/5242880 bytes)[*] Dang tai: 97% (5111808/5242880 bytes)[*] Dang tai: 98% (5177344/5242880 bytes)[*] Dang tai: 100% (5242880/5242880 bytes)
 [+] Tai file thanh cong! Luu tai: /tmp/rat_test_dst_5mb.bin
-[       OK ] FileTransferTest.Stream5MBFileMatchesExactly (14 ms)
-[----------] 1 test from FileTransferTest (14 ms total)
+[       OK ] FileTransferTest.Stream5MBFileMatchesExactly (15 ms)
+[----------] 1 test from FileTransferTest (15 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (14 ms total)
+[==========] 1 test from 1 test suite ran. (15 ms total)
 [  PASSED  ] 1 test.
 <end of output>
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"FileTransferTest.Stream5MBFileMatchesExactly" end time: Sep 09 11:44 +07
+"FileTransferTest.Stream5MBFileMatchesExactly" end time: Sep 10 11:27 +07
 "FileTransferTest.Stream5MBFileMatchesExactly" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Sep 09 11:44 +07
+15/32 Testing: SessionManagerTest.AddAndGetSessionSuccess
+15/32 Test: SessionManagerTest.AddAndGetSessionSuccess
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SessionManagerTest.AddAndGetSessionSuccess" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"SessionManagerTest.AddAndGetSessionSuccess" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = SessionManagerTest.AddAndGetSessionSuccess
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SessionManagerTest
+[ RUN      ] SessionManagerTest.AddAndGetSessionSuccess
+[       OK ] SessionManagerTest.AddAndGetSessionSuccess (0 ms)
+[----------] 1 test from SessionManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SessionManagerTest.AddAndGetSessionSuccess" end time: Sep 10 11:27 +07
+"SessionManagerTest.AddAndGetSessionSuccess" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/32 Testing: SessionManagerTest.GetNonExistentSessionReturnsNull
+16/32 Test: SessionManagerTest.GetNonExistentSessionReturnsNull
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SessionManagerTest.GetNonExistentSessionReturnsNull" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"SessionManagerTest.GetNonExistentSessionReturnsNull" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = SessionManagerTest.GetNonExistentSessionReturnsNull
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SessionManagerTest
+[ RUN      ] SessionManagerTest.GetNonExistentSessionReturnsNull
+[       OK ] SessionManagerTest.GetNonExistentSessionReturnsNull (0 ms)
+[----------] 1 test from SessionManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SessionManagerTest.GetNonExistentSessionReturnsNull" end time: Sep 10 11:27 +07
+"SessionManagerTest.GetNonExistentSessionReturnsNull" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/32 Testing: SessionManagerTest.RemoveSessionCleansUp
+17/32 Test: SessionManagerTest.RemoveSessionCleansUp
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SessionManagerTest.RemoveSessionCleansUp" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"SessionManagerTest.RemoveSessionCleansUp" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = SessionManagerTest.RemoveSessionCleansUp
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SessionManagerTest
+[ RUN      ] SessionManagerTest.RemoveSessionCleansUp
+[       OK ] SessionManagerTest.RemoveSessionCleansUp (0 ms)
+[----------] 1 test from SessionManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SessionManagerTest.RemoveSessionCleansUp" end time: Sep 10 11:27 +07
+"SessionManagerTest.RemoveSessionCleansUp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/32 Testing: SessionManagerTest.ReusesLowestAvailableIdAfterRemoval
+18/32 Test: SessionManagerTest.ReusesLowestAvailableIdAfterRemoval
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SessionManagerTest.ReusesLowestAvailableIdAfterRemoval" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"SessionManagerTest.ReusesLowestAvailableIdAfterRemoval" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = SessionManagerTest.ReusesLowestAvailableIdAfterRemoval
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SessionManagerTest
+[ RUN      ] SessionManagerTest.ReusesLowestAvailableIdAfterRemoval
+[       OK ] SessionManagerTest.ReusesLowestAvailableIdAfterRemoval (0 ms)
+[----------] 1 test from SessionManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SessionManagerTest.ReusesLowestAvailableIdAfterRemoval" end time: Sep 10 11:27 +07
+"SessionManagerTest.ReusesLowestAvailableIdAfterRemoval" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/32 Testing: SessionManagerTest.GetAllSessionsReturnsAllEntries
+19/32 Test: SessionManagerTest.GetAllSessionsReturnsAllEntries
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SessionManagerTest.GetAllSessionsReturnsAllEntries" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"SessionManagerTest.GetAllSessionsReturnsAllEntries" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = SessionManagerTest.GetAllSessionsReturnsAllEntries
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SessionManagerTest
+[ RUN      ] SessionManagerTest.GetAllSessionsReturnsAllEntries
+[       OK ] SessionManagerTest.GetAllSessionsReturnsAllEntries (0 ms)
+[----------] 1 test from SessionManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SessionManagerTest.GetAllSessionsReturnsAllEntries" end time: Sep 10 11:27 +07
+"SessionManagerTest.GetAllSessionsReturnsAllEntries" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/32 Testing: SessionManagerTest.CloseAllTerminatesAndClears
+20/32 Test: SessionManagerTest.CloseAllTerminatesAndClears
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SessionManagerTest.CloseAllTerminatesAndClears" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"SessionManagerTest.CloseAllTerminatesAndClears" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = SessionManagerTest.CloseAllTerminatesAndClears
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SessionManagerTest
+[ RUN      ] SessionManagerTest.CloseAllTerminatesAndClears
+[       OK ] SessionManagerTest.CloseAllTerminatesAndClears (0 ms)
+[----------] 1 test from SessionManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SessionManagerTest.CloseAllTerminatesAndClears" end time: Sep 10 11:27 +07
+"SessionManagerTest.CloseAllTerminatesAndClears" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/32 Testing: SessionManagerTest.ConcurrentMultiThreadedAccess
+21/32 Test: SessionManagerTest.ConcurrentMultiThreadedAccess
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=SessionManagerTest.ConcurrentMultiThreadedAccess" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"SessionManagerTest.ConcurrentMultiThreadedAccess" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = SessionManagerTest.ConcurrentMultiThreadedAccess
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SessionManagerTest
+[ RUN      ] SessionManagerTest.ConcurrentMultiThreadedAccess
+[       OK ] SessionManagerTest.ConcurrentMultiThreadedAccess (5 ms)
+[----------] 1 test from SessionManagerTest (6 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (6 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SessionManagerTest.ConcurrentMultiThreadedAccess" end time: Sep 10 11:27 +07
+"SessionManagerTest.ConcurrentMultiThreadedAccess" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/32 Testing: ServerCommandTest.EmptyCommandReturnsFalse
+22/32 Test: ServerCommandTest.EmptyCommandReturnsFalse
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ServerCommandTest.EmptyCommandReturnsFalse" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ServerCommandTest.EmptyCommandReturnsFalse" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ServerCommandTest.EmptyCommandReturnsFalse
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServerCommandTest
+[ RUN      ] ServerCommandTest.EmptyCommandReturnsFalse
+[       OK ] ServerCommandTest.EmptyCommandReturnsFalse (0 ms)
+[----------] 1 test from ServerCommandTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ServerCommandTest.EmptyCommandReturnsFalse" end time: Sep 10 11:27 +07
+"ServerCommandTest.EmptyCommandReturnsFalse" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/32 Testing: ServerCommandTest.HelpCommandHandledLocally
+23/32 Test: ServerCommandTest.HelpCommandHandledLocally
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ServerCommandTest.HelpCommandHandledLocally" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ServerCommandTest.HelpCommandHandledLocally" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ServerCommandTest.HelpCommandHandledLocally
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServerCommandTest
+[ RUN      ] ServerCommandTest.HelpCommandHandledLocally
+=================================== SHELL COMMANDS ================================
+  HELP                               : Hien thi danh sach cac lenh ho tro
+  LIST_DIR <path>                    : Xem danh sach file/thu muc tai <path>
+  READ_FILE <path>                   : Xem noi dung file tai <path>
+  DOWNLOAD_FILE <remote> <local>     : Tai file tu Client ve Server
+  LIST_PROC                          : Xem danh sach cac tien trinh dang chay
+  KILL_PROC <pid>                    : Ket thuc tien trinh <pid>
+  EXIT                               : Thoat
+===================================================================================
+[       OK ] ServerCommandTest.HelpCommandHandledLocally (0 ms)
+[----------] 1 test from ServerCommandTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ServerCommandTest.HelpCommandHandledLocally" end time: Sep 10 11:27 +07
+"ServerCommandTest.HelpCommandHandledLocally" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/32 Testing: ServerCommandTest.ListDirWithoutArgsDefaultsToCurrentDir
+24/32 Test: ServerCommandTest.ListDirWithoutArgsDefaultsToCurrentDir
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ServerCommandTest.ListDirWithoutArgsDefaultsToCurrentDir" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ServerCommandTest.ListDirWithoutArgsDefaultsToCurrentDir" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ServerCommandTest.ListDirWithoutArgsDefaultsToCurrentDir
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServerCommandTest
+[ RUN      ] ServerCommandTest.ListDirWithoutArgsDefaultsToCurrentDir
+[       OK ] ServerCommandTest.ListDirWithoutArgsDefaultsToCurrentDir (0 ms)
+[----------] 1 test from ServerCommandTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ServerCommandTest.ListDirWithoutArgsDefaultsToCurrentDir" end time: Sep 10 11:27 +07
+"ServerCommandTest.ListDirWithoutArgsDefaultsToCurrentDir" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/32 Testing: ServerCommandTest.ListDirWithArgsPreservesPath
+25/32 Test: ServerCommandTest.ListDirWithArgsPreservesPath
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ServerCommandTest.ListDirWithArgsPreservesPath" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ServerCommandTest.ListDirWithArgsPreservesPath" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ServerCommandTest.ListDirWithArgsPreservesPath
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServerCommandTest
+[ RUN      ] ServerCommandTest.ListDirWithArgsPreservesPath
+[       OK ] ServerCommandTest.ListDirWithArgsPreservesPath (0 ms)
+[----------] 1 test from ServerCommandTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ServerCommandTest.ListDirWithArgsPreservesPath" end time: Sep 10 11:27 +07
+"ServerCommandTest.ListDirWithArgsPreservesPath" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/32 Testing: ServerCommandTest.ReadFileValidation
+26/32 Test: ServerCommandTest.ReadFileValidation
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ServerCommandTest.ReadFileValidation" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ServerCommandTest.ReadFileValidation" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ServerCommandTest.ReadFileValidation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServerCommandTest
+[ RUN      ] ServerCommandTest.ReadFileValidation
+[!] Cu phap dung: READ_FILE <path>
+[       OK ] ServerCommandTest.ReadFileValidation (0 ms)
+[----------] 1 test from ServerCommandTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ServerCommandTest.ReadFileValidation" end time: Sep 10 11:27 +07
+"ServerCommandTest.ReadFileValidation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/32 Testing: ServerCommandTest.ListProcValidation
+27/32 Test: ServerCommandTest.ListProcValidation
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ServerCommandTest.ListProcValidation" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ServerCommandTest.ListProcValidation" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ServerCommandTest.ListProcValidation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServerCommandTest
+[ RUN      ] ServerCommandTest.ListProcValidation
+[       OK ] ServerCommandTest.ListProcValidation (0 ms)
+[----------] 1 test from ServerCommandTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"ServerCommandTest.ListProcValidation" end time: Sep 10 11:27 +07
+"ServerCommandTest.ListProcValidation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/32 Testing: ServerCommandTest.KillProcValidation
+28/32 Test: ServerCommandTest.KillProcValidation
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ServerCommandTest.KillProcValidation" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ServerCommandTest.KillProcValidation" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ServerCommandTest.KillProcValidation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServerCommandTest
+[ RUN      ] ServerCommandTest.KillProcValidation
+[!] Cu phap dung: KILL_PROC <PID>
+[       OK ] ServerCommandTest.KillProcValidation (0 ms)
+[----------] 1 test from ServerCommandTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ServerCommandTest.KillProcValidation" end time: Sep 10 11:27 +07
+"ServerCommandTest.KillProcValidation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/32 Testing: ServerCommandTest.DownloadFileValidation
+29/32 Test: ServerCommandTest.DownloadFileValidation
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ServerCommandTest.DownloadFileValidation" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ServerCommandTest.DownloadFileValidation" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ServerCommandTest.DownloadFileValidation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServerCommandTest
+[ RUN      ] ServerCommandTest.DownloadFileValidation
+[!] Cu phap dung: DOWNLOAD_FILE <remote_path> <local_path>
+[!] Cu phap dung: DOWNLOAD_FILE <remote_path> <local_path>
+[       OK ] ServerCommandTest.DownloadFileValidation (0 ms)
+[----------] 1 test from ServerCommandTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ServerCommandTest.DownloadFileValidation" end time: Sep 10 11:27 +07
+"ServerCommandTest.DownloadFileValidation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/32 Testing: ServerCommandTest.UnknownCommandReturnsFalse
+30/32 Test: ServerCommandTest.UnknownCommandReturnsFalse
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ServerCommandTest.UnknownCommandReturnsFalse" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ServerCommandTest.UnknownCommandReturnsFalse" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ServerCommandTest.UnknownCommandReturnsFalse
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServerCommandTest
+[ RUN      ] ServerCommandTest.UnknownCommandReturnsFalse
+[!] Lenh khong hop le! 'HELP' de xem danh sach lenh.
+[       OK ] ServerCommandTest.UnknownCommandReturnsFalse (0 ms)
+[----------] 1 test from ServerCommandTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ServerCommandTest.UnknownCommandReturnsFalse" end time: Sep 10 11:27 +07
+"ServerCommandTest.UnknownCommandReturnsFalse" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/32 Testing: ServerCommandTest.MultiClientSessionDispatchMock
+31/32 Test: ServerCommandTest.MultiClientSessionDispatchMock
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ServerCommandTest.MultiClientSessionDispatchMock" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ServerCommandTest.MultiClientSessionDispatchMock" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ServerCommandTest.MultiClientSessionDispatchMock
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServerCommandTest
+[ RUN      ] ServerCommandTest.MultiClientSessionDispatchMock
+[       OK ] ServerCommandTest.MultiClientSessionDispatchMock (0 ms)
+[----------] 1 test from ServerCommandTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ServerCommandTest.MultiClientSessionDispatchMock" end time: Sep 10 11:27 +07
+"ServerCommandTest.MultiClientSessionDispatchMock" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/32 Testing: ServerLifecycleTest.StartAndStopGracefullyWithoutHang
+32/32 Test: ServerLifecycleTest.StartAndStopGracefullyWithoutHang
+Command: "/home/ptc/projects/RAT/build/rat_unit_tests" "--gtest_filter=ServerLifecycleTest.StartAndStopGracefullyWithoutHang" "--gtest_also_run_disabled_tests"
+Directory: /home/ptc/projects/RAT/build
+"ServerLifecycleTest.StartAndStopGracefullyWithoutHang" start time: Sep 10 11:27 +07
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ServerLifecycleTest.StartAndStopGracefullyWithoutHang
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServerLifecycleTest
+[ RUN      ] ServerLifecycleTest.StartAndStopGracefullyWithoutHang
+[+] Server dang lang nghe tren port 19876...
+[       OK ] ServerLifecycleTest.StartAndStopGracefullyWithoutHang (1 ms)
+[----------] 1 test from ServerLifecycleTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ServerLifecycleTest.StartAndStopGracefullyWithoutHang" end time: Sep 10 11:27 +07
+"ServerLifecycleTest.StartAndStopGracefullyWithoutHang" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 10 11:27 +07
