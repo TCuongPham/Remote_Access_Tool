@@ -2,6 +2,7 @@
 # 1. Thư mục và file sinh ra khi Build (CMake / Make)
 # ==========================================
 build/
+build-win/
 bin/
 lib/
 out/

@@ -7,9 +7,16 @@
 #include <iomanip>
 #include <vector>
 #include <algorithm>
-#include <csignal>
-#include <cerrno>
-#include <cstring>
+
+#ifdef _WIN32
+    #include <windows.h>
+    #include <tlhelp32.h>
+#else
+    #include <csignal>
+    #include <cerrno>
+    #include <cstring>
+#endif
+
 #include <cctype>
 
 namespace fs = std::filesystem;
@@ -139,6 +146,29 @@ namespace RAT
             oss << std::left << std::setw(10) << "PID" << "COMMAND / NAME\n";
             oss << std::string(45, '-') << "\n";
 
+        // WIN 
+        #ifdef _WIN32
+            HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+            if (hSnapshot == INVALID_HANDLE_VALUE)
+            {
+                return Status::ERR + "Khong the khoi tao Snapshot tien trinh tren Windows!";
+            }
+            PROCESSENTRY32 pe32{};
+            pe32.dwSize = sizeof(PROCESSENTRY32);
+            int count = 0;
+            if (Process32First(hSnapshot, &pe32))
+            {
+                do
+                {
+                    oss << std::left << std::setw(10) << pe32.th32ProcessID << pe32.szExeFile << "\n";
+                    count++;
+                } while (Process32Next(hSnapshot, &pe32));
+            }
+            CloseHandle(hSnapshot);
+            oss << "\nTong so tien trinh: " << count << "\n";
+
+        // Linux
+        #else
             // Tạo vector lưu thông tin tiến trình
             struct ProcessInfo
             {
@@ -181,7 +211,7 @@ namespace RAT
 
                 // Sắp xếp danh sách tiến trình theo PID tăng dần
                 std::sort(procs.begin(), procs.end(), [](const ProcessInfo &a, const ProcessInfo &b)
-                          { return a.pid < b.pid; });
+                        { return a.pid < b.pid; });
 
                 // In danh sách tiến trình
                 for (const auto &p : procs)
@@ -194,6 +224,7 @@ namespace RAT
             {
                 return Status::ERR + "Loi liet ke tien trinh: " + e.what();
             }
+        #endif
             return oss.str();
         }
 
@@ -205,7 +236,25 @@ namespace RAT
             {
                 return Status::ERR + "PID khong hop le: " + std::to_string(pid);
             }
-
+        #ifdef _WIN32    
+            HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE, static_cast<DWORD>(pid));
+            if (hProcess == NULL)
+            {
+                DWORD err = GetLastError();
+                if (err == ERROR_ACCESS_DENIED)
+                    return Status::ERR + "Khong du quyen ket thuc PID " + std::to_string(pid);
+                return Status::ERR + "Khong tim thay tien trinh voi PID " + std::to_string(pid);
+            }
+            if (!TerminateProcess(hProcess, 1))
+            {
+                CloseHandle(hProcess);
+                return Status::ERR + "Loi khi kill PID " + std::to_string(pid);
+            }
+            CloseHandle(hProcess);
+            return Status::OK + "Da ket thuc tien trinh PID " + std::to_string(pid) + " thanh cong.";
+        
+        // Linux
+        #else
             // Gửi tín hiệu SIGKILL (9) tới PID chỉ định
             if (::kill(pid, SIGKILL) == 0)
             {
@@ -216,12 +265,13 @@ namespace RAT
             switch (errno)
             {
             case ESRCH:
-                return Status::ERR + "Khong tim thay tien trinh voi PID " + std::to_string(pid) + " (tien trinh co the da tat).";
+                return Status::ERR + "Khong tim thay tien trinh voi PID " + std::to_string(pid) ;
             case EPERM:
-                return Status::ERR + "Khong du quyen ket thuc PID " + std::to_string(pid) + " (Yeu cau quyen root/sudo).";
+                return Status::ERR + "Khong du quyen ket thuc PID " + std::to_string(pid);
             default:
                 return Status::ERR + "Loi khi kill PID " + std::to_string(pid) + ": " + std::strerror(errno);
             }
+        #endif
         }
     }
 }

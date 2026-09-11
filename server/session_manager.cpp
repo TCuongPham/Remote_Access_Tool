@@ -9,7 +9,7 @@ namespace RAT
     }
 
     // Thêm một client mới
-    int SessionManager::add_session(int sock, const std::string &ip, int port)
+    int SessionManager::add_session(socket_t sock, const std::string &ip, int port)
     {
         std::lock_guard<std::mutex> lock(map_mtx_);
         

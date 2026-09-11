@@ -2,8 +2,7 @@
 
 #include "socket_utils.h"
 #include "protocol.h"
-
-#include <sys/socket.h>
+#include "test_compat.h"
 #include <filesystem>
 #include <fstream>
 #include <vector>
@@ -13,12 +12,12 @@ namespace fs = std::filesystem;
 
 class FileTransferTest : public ::testing::Test {
 protected:
-    int sv[2];
+    socket_t sv[2];
     fs::path src_file;
     fs::path dst_file;
 
     void SetUp() override {
-        ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, sv), 0);
+        ASSERT_TRUE(create_test_socketpair(sv));
 
         src_file = fs::temp_directory_path() / "rat_test_src_5mb.bin";
         dst_file = fs::temp_directory_path() / "rat_test_dst_5mb.bin";

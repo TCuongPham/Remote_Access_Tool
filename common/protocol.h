@@ -1,8 +1,9 @@
 #pragma once
 
+#include "platform.h"
+
 #include <cstdint>
 #include <string>
-#include <endian.h>
 
 namespace RAT
 {

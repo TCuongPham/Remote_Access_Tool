@@ -1,12 +1,9 @@
 #include "client.h"
 #include "executor.h"
+#include "platform.h"
 
 #include <iostream>
 #include <sstream>
-#include <unistd.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
 #include <thread>
 #include <chrono>
 
@@ -14,10 +11,11 @@ namespace RAT
 {
     // Khởi tạo Client với host và port
     Client::Client(const std::string &host, int port)
-        : server_host_(host), server_port_(port), sock_fd_(-1), is_running_(false) {}
+        : server_host_(host), server_port_(port), sock_fd_(INVALID_SOCKET_VAL), is_running_(false) { init_networking();}
     Client::~Client()
     {
         stop();
+        cleanup_networking();
     }
 
     // Hàm kết nối tới server
@@ -27,7 +25,7 @@ namespace RAT
         {
             // Tạo socket TCP IPv4
             sock_fd_ = ::socket(AF_INET, SOCK_STREAM, 0);
-            if (sock_fd_ < 0)
+            if (sock_fd_ == INVALID_SOCKET_VAL)
             {
                 std::cerr << Status::ERR << "Khong the tao socket!\n";
                 return false;

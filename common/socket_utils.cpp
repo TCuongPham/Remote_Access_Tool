@@ -1,23 +1,19 @@
 #include "socket_utils.h"
 #include "protocol.h"
+#include "platform.h"
 
-#include <unistd.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <netinet/in.h>
 #include <string>
 #include <iostream>
-#include <endian.h>
 #include <filesystem>
 #include <fstream>
 
 namespace RAT
 {
     // Gửi dữ liệu chính xác `size` byte qua socket
-    bool send_exact(int sock, const void *data, size_t size)
+    bool send_exact(socket_t sock, const void *data, size_t size)
     {
         // Kiểm tra socket và dữ liệu hợp lệ
-        if (sock < 0 || data == nullptr)
+        if (sock == INVALID_SOCKET_VAL || data == nullptr)
         {
             return false;
         }
@@ -39,10 +35,10 @@ namespace RAT
     }
 
     // Nhận dữ liệu chính xác `size` byte từ socket
-    bool recv_exact(int sock, void *data, size_t size)
+    bool recv_exact(socket_t sock, void *data, size_t size)
     {
         // Kiểm tra socket và dữ liệu hợp lệ
-        if (sock < 0 || data == nullptr)
+        if (sock == INVALID_SOCKET_VAL || data == nullptr)
         {
             return false;
         }
@@ -64,10 +60,10 @@ namespace RAT
     }
 
     // Gửi thông điệp với định dạng: `[4 bytes: Độ dài dữ liệu (uint32_t)] + [N bytes: Nội dung văn bản]`
-    bool send_message(int sock, const std::string &msg)
+    bool send_message(socket_t sock, const std::string &msg)
     {
         // Kiểm tra socket
-        if (sock < 0)
+        if (sock == INVALID_SOCKET_VAL)
         {
             return false;
         }
@@ -102,9 +98,9 @@ namespace RAT
     }
 
     // Nhận thông điệp với định dạng: `[4 bytes: Độ dài dữ liệu (uint32_t)] + [N bytes: Nội dung văn bản]`
-    bool recv_message(int sock, std::string &msg)
+    bool recv_message(socket_t sock, std::string &msg)
     {
-        if (sock < 0)
+        if (sock == INVALID_SOCKET_VAL)
         {
             return false;
         }
@@ -142,7 +138,7 @@ namespace RAT
     }
 
     // 1. Phía gửi (Client): Gửi từng block 64KB
-    bool send_file_stream(int sock, const std::string &filepath)
+    bool send_file_stream(socket_t sock, const std::string &filepath)
     {
         namespace fs = std::filesystem;
         FileTransferHeader header{};
@@ -168,8 +164,8 @@ namespace RAT
         }
 
         uint64_t total_size = fs::file_size(filepath, ec);
-        header.status_code = 0;                 // OK
-        header.file_size = htobe64(total_size); // Chuẩn hóa Endian cho 64-bit
+        header.status_code = 0;                     // OK
+        header.file_size = rat_htobe64(total_size); // Chuẩn hóa Endian cho 64-bit
 
         // Bước 1: Gửi Header bắt tay
         if (!send_exact(sock, &header, sizeof(header)))
@@ -196,7 +192,7 @@ namespace RAT
     }
 
     // 2. Phía nhận (Server): Nhận từng block và ghi ngay xuống đĩa cứng
-    bool recv_file_stream(int sock, const std::string &save_path)
+    bool recv_file_stream(socket_t sock, const std::string &save_path)
     {
         namespace fs = std::filesystem;
         FileTransferHeader header{};
@@ -221,7 +217,7 @@ namespace RAT
             return false;
         }
 
-        uint64_t total_size = be64toh(header.file_size);
+        uint64_t total_size = rat_be64toh(header.file_size);
 
         // Tạo thư mục cha nếu chưa tồn tại
         std::error_code ec;
@@ -252,15 +248,16 @@ namespace RAT
 
             uint32_t chunk_len = ntohl(net_len);
             if (chunk_len == 0)
-                break; // Đã nhận EOF Marker 
+                break; // Đã nhận EOF Marker
 
             // Kiểm tra an toàn: tránh tràn bộ đệm stack nếu chunk_len bất thường
             if (chunk_len > FILE_CHUNK_SIZE)
             {
-                std::cerr << "\n" << Status::ERR << "Loi: Kich thuoc chunk vuot qua FILE_CHUNK_SIZE!\n";
+                std::cerr << "\n"
+                          << Status::ERR << "Loi: Kich thuoc chunk vuot qua FILE_CHUNK_SIZE!\n";
                 return false;
             }
-                
+
             if (!recv_exact(sock, buffer, chunk_len))
                 return false;
 
@@ -281,13 +278,13 @@ namespace RAT
         return true;
     }
 
-    // Đóng socket và đặt giá trị socket về -1
-    void close_socket(int &sock)
+    // Đóng socket và đặt giá trị socket về -1 (hoặc INVALID_SOCKET)
+    void close_socket(socket_t &sock)
     {
-        if (sock >= 0)
+        if (sock != INVALID_SOCKET_VAL)
         {
-            ::close(sock);
-            sock = -1;
+            CLOSE_SOCKET(sock);
+            sock = INVALID_SOCKET_VAL;
         }
     }
 }

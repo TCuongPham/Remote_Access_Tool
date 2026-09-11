@@ -1,8 +1,7 @@
 #include "protocol.h"
+#include "platform.h"
 
 #include <gtest/gtest.h>
-#include <arpa/inet.h>
-#include <endian.h>
 #include <cstring>
 
 // Test 1: Kiểm tra các hằng số kích thước và cấu hình mặc định trong protocol
@@ -44,12 +43,12 @@ TEST(ProtocolTest, FileTransferHeaderLayout) {
 TEST(ProtocolTest, EndianConversionIntegrity) {
     // 64-bit (cho kích thước file hỗ trợ > 4GB)
     uint64_t original_64 = 0x123456789ABCDEF0ULL;
-    uint64_t be_64 = htobe64(original_64);
-    uint64_t recovered_64 = be64toh(be_64);
+    uint64_t be_64 = rat_htobe64(original_64);
+    uint64_t recovered_64 = rat_be64toh(be_64);
     EXPECT_EQ(recovered_64, original_64);
 
     uint64_t large_file_size = 5ULL * 1024 * 1024 * 1024; // 5 GB
-    EXPECT_EQ(be64toh(htobe64(large_file_size)), large_file_size);
+    EXPECT_EQ(rat_be64toh(rat_htobe64(large_file_size)), large_file_size);
 
     // 32-bit (cho độ dài gói tin length-prefixed)
     uint32_t original_32 = 0xA1B2C3D4;

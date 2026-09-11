@@ -1,5 +1,7 @@
 #pragma once
 
+#include "platform.h"
+
 #include <string>
 #include <unordered_map>
 #include <memory>
@@ -12,7 +14,7 @@ namespace RAT
     struct ClientSession
     {
         int id;         // ID
-        int socket_fd;  // Socket kết nối với Client này
+        socket_t socket_fd;  // Socket kết nối với Client này
         std::string ip; // Địa chỉ IP của Client
         int port;       // Cổng kết nối của Client
         std::chrono::system_clock::time_point connect_time;
@@ -27,7 +29,7 @@ namespace RAT
         ~SessionManager();
 
         // Thêm một client mới, trả về Session ID
-        int add_session(int sock, const std::string &ip, int port);
+        int add_session(socket_t sock, const std::string &ip, int port);
 
         // Xóa một client theo ID (và đóng socket)
         void remove_session(int id);

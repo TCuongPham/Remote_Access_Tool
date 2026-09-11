@@ -1,18 +1,17 @@
 #include "socket_utils.h"
-
+#include "test_compat.h"
 #include <gtest/gtest.h>
 
-#include <sys/socket.h>
-#include <unistd.h>
 #include <string>
+#include <vector>
 
 // Fixture tự động tạo trước test và đóng cặp socket sau test
 class SocketUtilsTest : public ::testing::Test {
 protected:
-    int sv[2]; // sv[0] là đầu gửi, sv[1] là đầu nhận
+    socket_t sv[2]; // sv[0] là đầu gửi, sv[1] là đầu nhận
     void SetUp() override {
         // Tạo cặp socket ảo trong kernel
-        ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, sv), 0);
+        ASSERT_TRUE(create_test_socketpair(sv));
     }
     void TearDown() override {
         RAT::close_socket(sv[0]);

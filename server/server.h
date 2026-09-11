@@ -50,7 +50,7 @@ namespace RAT
         // Hàm xử lý command tương tác 1-1 với Client
         void run_client_shell(std::shared_ptr<ClientSession> session);
 
-        int server_fd_;         // Socket lắng nghe của Server
+        socket_t server_fd_;    // Socket lắng nghe của Server
         int port_;        
         
         std::atomic<bool> is_running_;

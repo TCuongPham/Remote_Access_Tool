@@ -6,7 +6,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Bật cảnh báo trình biên dịch để rà soát lỗi code
-add_compile_options(-Wall -Wextra)
+if (MSVC) # Cho WIN
+    add_compile_options(/W4 /utf-8)
+    add_compile_definitions(WIN32_LEAN_AND_MEAN NOMINMAX _CRT_SECURE_NO_WARNINGS)
+else() # Cho LINUX
+    add_compile_options(-Wall -Wextra)
+endif()
+
+# Thư viện mạng cho Windows
+if (WIN32)
+    set(PLATFORM_NETWORK_LIBS ws2_32)
+else()
+    set(PLATFORM_NETWORK_LIBS "")
+endif()
 
 # Tìm kiếm thư viện luồng (pthread) cần cho std::this_thread::sleep_for ở Client
 find_package(Threads REQUIRED)
@@ -32,6 +44,7 @@ target_include_directories(bin_server PRIVATE
 target_link_libraries(bin_server PRIVATE
     rat_common
     Threads::Threads 
+    ${PLATFORM_NETWORK_LIBS}
 )
 
 # 3. BIÊN DỊCH CLIENT (bin_client)
@@ -46,6 +59,7 @@ target_include_directories(bin_client PRIVATE
 target_link_libraries(bin_client PRIVATE
     rat_common
     Threads::Threads
+    ${PLATFORM_NETWORK_LIBS}
 )
 
 # Cấu hình Google Test
@@ -83,7 +97,12 @@ target_link_libraries(rat_unit_tests PRIVATE
     rat_common
     GTest::gtest
     Threads::Threads
+    ${PLATFORM_NETWORK_LIBS}
 )
 
 include(GoogleTest)
-gtest_discover_tests(rat_unit_tests)
+if(CMAKE_CROSSCOMPILING)
+    gtest_discover_tests(rat_unit_tests DISCOVERY_MODE PRE_TEST)
+else()
+    gtest_discover_tests(rat_unit_tests)
+endif()

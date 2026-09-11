@@ -1,25 +1,23 @@
 #include "server.h"
+#include "platform.h"
 
 #include <iostream>
 #include <sstream>
-#include <unistd.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
 #include <cstring>
 #include <future>
 #include <vector>
 #include <iomanip>
-#include <poll.h>
+
 
 namespace RAT
 {
     // Khởi tạo Server với port
     Server::Server(int port)
-        : server_fd_(-1), port_(port), is_running_(false) {}
+        : server_fd_(INVALID_SOCKET_VAL), port_(port), is_running_(false) {init_networking();}
     Server::~Server()
     {
         stop();
+        cleanup_networking();
     }
 
     // Khởi tạo Socket, bind và listen
@@ -27,7 +25,7 @@ namespace RAT
     {
         // Tạo socket TCP IPv4
         server_fd_ = ::socket(AF_INET, SOCK_STREAM, 0);
-        if (server_fd_ < 0)
+        if (server_fd_ == INVALID_SOCKET_VAL)
         {
             std::cerr << Status::ERR << "Khong the tao server socket!\n";
             return false;
@@ -35,7 +33,7 @@ namespace RAT
 
         // Thiết lập SO_REUSEADDR để tránh lỗi "Address already in use" khi restart server nhanh
         int opt = 1;
-        if (setsockopt(server_fd_, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0)
+        if (setsockopt(server_fd_, SOL_SOCKET, SO_REUSEADDR, reinterpret_cast<const char *>(&opt), sizeof(opt)) < 0)
         {
             std::cerr << Status::ERR << "Loi setsockopt(SO_REUSEADDR)!\n";
             stop();
@@ -77,12 +75,12 @@ namespace RAT
     {
         while (is_running_)
         {
-            struct pollfd pfd{};
+            POLL_STRUCT pfd{};
             pfd.fd = server_fd_;
             pfd.events = POLLIN;
 
             // Chờ kết nối với timeout 100ms để kiểm tra cờ is_running_ định kỳ
-            int poll_ret = ::poll(&pfd, 1, 100);
+            int poll_ret = POLL_FUNC(&pfd, 1, 100);
             if (poll_ret < 0)
             {
                 if (errno == EINTR)
@@ -100,9 +98,9 @@ namespace RAT
                 // Chấp nhận kết nối từ client
                 struct sockaddr_in client_addr{};
                 socklen_t client_len = sizeof(client_addr);
-                int client_fd = ::accept(server_fd_, reinterpret_cast<struct sockaddr *>(&client_addr), &client_len);
+                socket_t client_fd = ::accept(server_fd_, reinterpret_cast<struct sockaddr *>(&client_addr), &client_len);
 
-                if (client_fd < 0)
+                if (client_fd == INVALID_SOCKET_VAL)
                 {
                     if (!is_running_)
                         break;
@@ -140,17 +138,29 @@ namespace RAT
         auto current_sessions = session_manager_.get_all_sessions();
         for (const auto &[id, session] : current_sessions)
         {
-            char buf;
-            ssize_t res;
+            POLL_STRUCT pfd{};
+            pfd.fd = session->socket_fd;
+            pfd.events = POLLIN;
+
+            int poll_res = POLL_FUNC(&pfd, 1, 0); // Thăm dò 0ms không chặn
+            if (poll_res > 0)
             {
-                std::lock_guard<std::mutex> lock(session->socket_mtx);
-                res = ::recv(session->socket_fd, &buf, 1, MSG_PEEK | MSG_DONTWAIT);
-            }
-            // res == 0: Client đã gửi gói tin TCP FIN đóng kết nối (ví dụ bấm Ctrl+C)
-            // res < 0 và errno khác EAGAIN/EWOULDBLOCK: Socket bị lỗi hoặc đứt kết nối
-            if (res == 0 || (res < 0 && errno != EAGAIN && errno != EWOULDBLOCK))
-            {
-                session_manager_.remove_session(id);
+                if (pfd.revents & (POLLHUP | POLLERR))
+                {
+                    session_manager_.remove_session(id);
+                    continue;
+                }
+                if (pfd.revents & POLLIN)
+                {
+                    char buf;
+                    std::lock_guard<std::mutex> lock(session->socket_mtx);
+                    int res = ::recv(session->socket_fd, &buf, 1, MSG_PEEK);
+                    if (res <= 0)
+                    {
+                        session_manager_.remove_session(id);
+                        continue;
+                    }
+                }
             }
         }
 
@@ -481,7 +491,7 @@ namespace RAT
     // Đóng socket
     void Server::stop()
     {
-        if (!is_running_ && server_fd_ < 0)
+        if (!is_running_ && server_fd_ == INVALID_SOCKET_VAL)
         {
             return;
         }

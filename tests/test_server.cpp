@@ -3,9 +3,8 @@
 #include "server.h"
 #include "protocol.h"
 #include "socket_utils.h"
+#include "test_compat.h"
 
-#include <sys/socket.h>
-#include <unistd.h>
 #include <thread>
 #include <vector>
 
@@ -22,7 +21,7 @@ namespace RAT
     TEST_F(SessionManagerTest, AddAndGetSessionSuccess)
     {
         int fds[2];
-        ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, fds), 0);
+        ASSERT_TRUE(create_test_socketpair(fds));
 
         int id = manager.add_session(fds[0], "192.168.1.50", 9999);
         EXPECT_GT(id, 0);
@@ -35,7 +34,7 @@ namespace RAT
         EXPECT_EQ(session->port, 9999);
         EXPECT_EQ(session->socket_fd, fds[0]);
 
-        ::close(fds[1]);
+        CLOSE_SOCKET(fds[1]);
     }
 
     // Lấy session non
@@ -49,7 +48,7 @@ namespace RAT
     TEST_F(SessionManagerTest, RemoveSessionCleansUp)
     {
         int fds[2];
-        ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, fds), 0);
+        ASSERT_TRUE(create_test_socketpair(fds));
 
         int id = manager.add_session(fds[0], "127.0.0.1", 8888);
         EXPECT_EQ(manager.count(), 1);
@@ -58,16 +57,16 @@ namespace RAT
         EXPECT_EQ(manager.count(), 0);
         EXPECT_EQ(manager.get_session(id), nullptr);
 
-        ::close(fds[1]);
+        CLOSE_SOCKET(fds[1]);
     }
 
     // Tái sử dụng ID nhỏ nhất còn trống khi client ngắt kết nối
     TEST_F(SessionManagerTest, ReusesLowestAvailableIdAfterRemoval)
     {
         int fds1[2], fds2[2], fds3[2], fds_new[2];
-        ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, fds1), 0);
-        ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, fds2), 0);
-        ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, fds3), 0);
+        ASSERT_TRUE(create_test_socketpair(fds1));
+        ASSERT_TRUE(create_test_socketpair(fds2));
+        ASSERT_TRUE(create_test_socketpair(fds3));
 
         int id1 = manager.add_session(fds1[0], "127.0.0.1", 10001);
         int id2 = manager.add_session(fds2[0], "127.0.0.1", 10002);
@@ -82,21 +81,21 @@ namespace RAT
         EXPECT_EQ(manager.get_session(2), nullptr);
 
         // Client mới kết nối -> Phải nhận ID 2 (ID nhỏ nhất còn trống)
-        ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, fds_new), 0);
+        ASSERT_TRUE(create_test_socketpair(fds_new));
         int id_reused = manager.add_session(fds_new[0], "127.0.0.1", 10004);
         EXPECT_EQ(id_reused, 2);
 
         // Client kế tiếp kết nối -> Phải nhận ID 4
         int fds_next[2];
-        ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, fds_next), 0);
+        ASSERT_TRUE(create_test_socketpair(fds_next));
         int id_next = manager.add_session(fds_next[0], "127.0.0.1", 10005);
         EXPECT_EQ(id_next, 4);
 
-        ::close(fds1[1]);
-        ::close(fds2[1]);
-        ::close(fds3[1]);
-        ::close(fds_new[1]);
-        ::close(fds_next[1]);
+        CLOSE_SOCKET(fds1[1]);
+        CLOSE_SOCKET(fds2[1]);
+        CLOSE_SOCKET(fds3[1]);
+        CLOSE_SOCKET(fds_new[1]);
+        CLOSE_SOCKET(fds_next[1]);
     }
 
     //  Lấy bản sao ds client
@@ -106,7 +105,7 @@ namespace RAT
         for (int i = 1; i <= 3; ++i)
         {
             int fds[2];
-            ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, fds), 0);
+            ASSERT_TRUE(create_test_socketpair(fds));
             manager.add_session(fds[0], "10.0.0." + std::to_string(i), 8000 + i);
             client_ends.push_back(fds[1]);
         }
@@ -122,7 +121,7 @@ namespace RAT
 
         for (int fd : client_ends)
         {
-            ::close(fd);
+            CLOSE_SOCKET(fd);
         }
     }
 
@@ -133,7 +132,7 @@ namespace RAT
         for (int i = 0; i < 5; ++i)
         {
             int fds[2];
-            ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, fds), 0);
+            ASSERT_TRUE(create_test_socketpair(fds));
             manager.add_session(fds[0], "127.0.0.1", 7000 + i);
             client_ends.push_back(fds[1]);
         }
@@ -145,7 +144,7 @@ namespace RAT
 
         for (int fd : client_ends)
         {
-            ::close(fd);
+            CLOSE_SOCKET(fd);
         }
     }
 
@@ -160,7 +159,7 @@ namespace RAT
         {
             threads.emplace_back([this, i, &client_ends]() {
                 int fds[2];
-                if (::socketpair(AF_UNIX, SOCK_STREAM, 0, fds) == 0)
+                if (create_test_socketpair(fds))
                 {
                     client_ends[i] = fds[1];
                     manager.add_session(fds[0], "172.16.0." + std::to_string(i), 9000 + i);
@@ -177,7 +176,7 @@ namespace RAT
 
         for (int fd : client_ends)
         {
-            ::close(fd);
+            CLOSE_SOCKET(fd);
         }
     }
 
@@ -270,12 +269,12 @@ namespace RAT
     {
         // Giả lập 3 client kết nối qua socketpair
         constexpr int NUM_CLIENTS = 3;
-        int client_fds[NUM_CLIENTS];
+        socket_t client_fds[NUM_CLIENTS];
 
         for (int i = 0; i < NUM_CLIENTS; ++i)
         {
-            int sv[2];
-            ASSERT_EQ(::socketpair(AF_UNIX, SOCK_STREAM, 0, sv), 0);
+            socket_t sv[2];
+            ASSERT_TRUE(create_test_socketpair(sv));
             server.get_session_manager().add_session(sv[0], "192.168.1." + std::to_string(10 + i), 5000 + i);
             client_fds[i] = sv[1]; // Đầu phía Client
         }
@@ -308,7 +307,7 @@ namespace RAT
 
         for (int i = 0; i < NUM_CLIENTS; ++i)
         {
-            ::close(client_fds[i]);
+            CLOSE_SOCKET(client_fds[i]);
         }
     }
 

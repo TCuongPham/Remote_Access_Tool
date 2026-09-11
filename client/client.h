@@ -30,7 +30,7 @@ namespace RAT
         std::string server_host_; // Địa chỉ IP của Server (mặc định 127.0.0.1)
         int server_port_;         // Port của Server (mặc định 8888)
 
-        int sock_fd_;             // Socket kết nối tới Server
+        socket_t sock_fd_;        // Socket kết nối tới Server
         bool is_running_;         // Cờ kiểm soát vòng lặp hoạt động
     };
 }
