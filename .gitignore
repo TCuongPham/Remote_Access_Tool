@@ -1,0 +1,48 @@
+# ==========================================
+# 1. Thư mục và file sinh ra khi Build (CMake / Make)
+# ==========================================
+build/
+bin/
+lib/
+out/
+CMakeUserPresets.json
+compile_commands.json
+.cache/
+
+# ==========================================
+# 2. File nhị phân, file đối tượng & thư viện biên dịch
+# ==========================================
+*.o
+*.obj
+*.d
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Các file thực thi sinh ra trực tiếp
+bin_client
+bin_server
+rat_unit_tests
+
+# ==========================================
+# 3. File cấu hình của các IDE / Editor
+# ==========================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.swp
+*~
+.clangd/
+
+# ==========================================
+# 4. File tạm hệ điều hành & Test logs
+# ==========================================
+.DS_Store
+Thumbs.db
+Testing/
+CTestTestfile.cmake
+*.log

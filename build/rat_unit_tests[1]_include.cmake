@@ -1,5 +1,0 @@
-if(EXISTS "/home/ptc/projects/RAT/build/rat_unit_tests[1]_tests.cmake")
-  include("/home/ptc/projects/RAT/build/rat_unit_tests[1]_tests.cmake")
-else()
-  add_test(rat_unit_tests_NOT_BUILT rat_unit_tests_NOT_BUILT)
-endif()

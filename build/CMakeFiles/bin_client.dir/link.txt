@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/bin_client.dir/link.d CMakeFiles/bin_client.dir/client/executor.cpp.o CMakeFiles/bin_client.dir/client/client.cpp.o CMakeFiles/bin_client.dir/client/main_client.cpp.o -o bin_client  librat_common.a
