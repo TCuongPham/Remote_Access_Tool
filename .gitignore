@@ -46,3 +46,9 @@ Thumbs.db
 Testing/
 CTestTestfile.cmake
 *.log
+
+# ==========================================
+# 5. File tài liệu nội bộ / cá nhân
+# ==========================================
+HUONG_DAN_DU_AN.md
+
