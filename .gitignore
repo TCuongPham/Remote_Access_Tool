@@ -26,6 +26,7 @@ compile_commands.json
 bin_client
 bin_server
 rat_unit_tests
+a.out
 
 # ==========================================
 # 3. File cấu hình của các IDE / Editor
