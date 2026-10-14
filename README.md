@@ -2,7 +2,7 @@
 
 ## Giới Thiệu
 
-**Remote Access Tool (RAT)** là framework quản trị và điều khiển máy tính từ xa theo mô hình Client - Server được phát triển bằng **C++17**. Dự án được xây dựng gọn nhẹ, có khả năng tương thích trên cả **Linux** và **Windows**.
+**Remote Access Tool (RAT)** quản trị và điều khiển máy tính từ xa theo mô hình Client - Server. Dự án có khả năng tương thích trên cả **Linux** và **Windows**.
 
 ## Tính Năng
 
